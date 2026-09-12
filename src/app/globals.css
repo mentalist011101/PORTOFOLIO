@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+@theme {
+	--color-paper: #f7f3ea;
+	--color-paper-alt: #efe9dc;
+	--color-card: #fffdf8;
+	--color-ink: #16181d;
+	--color-ink-soft: #5c6069;
+	--color-ink-faint: #8a8d95;
+	--color-rust: #b4400f;
+	--color-rust-deep: #8f3009;
+	--color-ember: #e0661c;
+	--color-night: #151c2e;
+	--color-night-soft: #212a40;
+	--color-sun: #f2ce1b;
+	--color-azure: #0f62ce;
+	--color-kraft: #c9a87c;
+	--color-kraft-deep: #8c6a3f;
+	--color-rule: rgba(22, 24, 29, 0.14);
+	--color-rule-strong: rgba(22, 24, 29, 0.32);
+
+	--font-display: var(--font-archivo), "Archivo", system-ui, sans-serif;
+	--font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+	--font-mono: var(--font-mono-face), "JetBrains Mono", ui-monospace, monospace;
+	--font-editorial: var(--font-newsreader), "Newsreader", Georgia, serif;
+
+	--radius-card: 3px;
+	--radius-btn: 6px;
+
+	--shadow-card: 0 1px 1px rgba(22, 24, 29, 0.05), 0 10px 24px -14px rgba(22, 24, 29, 0.35);
+	--shadow-lift: 0 2px 3px rgba(22, 24, 29, 0.06), 0 22px 40px -20px rgba(22, 24, 29, 0.45);
+	--shadow-hard: 3px 3px 0 rgba(22, 24, 29, 0.24);
+	--shadow-hard-sm: 1px 1px 0 rgba(22, 24, 29, 0.24);
+	--shadow-hard-light: 3px 3px 0 rgba(255, 255, 255, 0.22);
+	--shadow-hard-light-sm: 1px 1px 0 rgba(255, 255, 255, 0.22);
+
+	--ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+		scroll-padding-top: 6.5rem;
+		-webkit-text-size-adjust: 100%;
+		text-size-adjust: 100%;
+	}
+
+	body {
+		background-color: var(--color-paper);
+		color: var(--color-ink);
+		font-family: var(--font-sans);
+		font-synthesis-weight: none;
+		text-rendering: optimizeLegibility;
+		overflow-x: hidden;
+	}
+
+	::selection {
+		background-color: var(--color-sun);
+		color: var(--color-ink);
+	}
+
+	:focus-visible {
+		outline: 2px solid var(--color-rust);
+		outline-offset: 3px;
+		border-radius: 2px;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		font-family: var(--font-display);
+		font-weight: 800;
+		letter-spacing: -0.02em;
+		text-wrap: balance;
+	}
+
+	p {
+		text-wrap: pretty;
+	}
+}
+
+/* Grain and rules that make the page read as paper rather than as a screen. */
+@utility paper-grain {
+	background-image:
+		radial-gradient(rgba(22, 24, 29, 0.05) 1px, transparent 1px),
+		radial-gradient(rgba(22, 24, 29, 0.035) 1px, transparent 1px);
+	background-size: 22px 22px, 37px 37px;
+	background-position: 0 0, 11px 13px;
+}
+
+@utility grid-paper {
+	background-image:
+		linear-gradient(to right, rgba(22, 24, 29, 0.055) 1px, transparent 1px),
+		linear-gradient(to bottom, rgba(22, 24, 29, 0.055) 1px, transparent 1px);
+	background-size: 26px 26px;
+}
+
+@utility night-grid {
+	background-image:
+		linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+		linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+	background-size: 34px 34px;
+}
+
+@utility rule-line {
+	background-image: repeating-linear-gradient(
+		to bottom,
+		transparent 0,
+		transparent 27px,
+		rgba(22, 24, 29, 0.07) 27px,
+		rgba(22, 24, 29, 0.07) 28px
+	);
+}
+
+/* Post-it : ombre douce en biais, coin corné suggéré par le dégradé. */
+@utility sticky-note {
+	position: relative;
+	box-shadow:
+		0 1px 1px rgba(22, 24, 29, 0.1),
+		0 8px 14px -10px rgba(22, 24, 29, 0.45);
+	background-image: linear-gradient(160deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0) 55%);
+}
+
+@utility eyebrow {
+	font-family: var(--font-editorial);
+	font-style: italic;
+	font-size: 1.0625rem;
+	letter-spacing: 0.01em;
+	color: var(--color-ink-soft);
+}
+
+@utility label-mono {
+	font-family: var(--font-mono);
+	font-size: 0.6875rem;
+	font-weight: 500;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+@utility shell {
+	width: 100%;
+	max-width: 78rem;
+	margin-inline: auto;
+	padding-inline: 1.25rem;
+
+	@media (min-width: 640px) {
+		padding-inline: 2rem;
+	}
+
+	@media (min-width: 1280px) {
+		padding-inline: 2.5rem;
+	}
+}
+
+@keyframes reveal-in {
+	from {
+		opacity: 0;
+		transform: translate3d(0, 18px, 0);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes blink-soft {
+	0%,
+	100% {
+		opacity: 0.25;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+
+@keyframes drift {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(-8px);
+	}
+}
+
+.reveal {
+	opacity: 0;
+}
+
+.reveal[data-visible="true"] {
+	animation: reveal-in 0.7s var(--ease-out-soft) both;
+	animation-delay: var(--reveal-delay, 0ms);
+}
+
+.thinking-dot {
+	animation: blink-soft 1.2s ease-in-out infinite;
+}
+
+.drift-slow {
+	animation: drift 4.5s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.001ms !important;
+		animation-delay: 0ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+	}
+
+	/* The reveal must not depend on the observer at all when motion is reduced. */
+	.reveal,
+	.reveal[data-visible="true"] {
+		opacity: 1;
+		animation: none !important;
+	}
+}

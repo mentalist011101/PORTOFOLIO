@@ -1,0 +1,66 @@
+import type { GalleryItem } from "@/types";
+
+export const gallery: readonly GalleryItem[] = [
+	{
+		id: "portrait",
+		src: "/images/portrait.jpeg",
+		alt: "Luciano Fokouo Saadie on the ENSPY campus",
+		caption: "ENSPY, Yaoundé",
+		ratio: "portrait",
+	},
+	{
+		id: "lesson-assistant",
+		src: "/images/project-lesson-assistant.jpeg",
+		alt: "The lesson planning assistant prototype",
+		caption: "Lesson assistant — prototype",
+		href: "#projects",
+		ratio: "wide",
+	},
+	{
+		id: "datatour",
+		src: "/images/datatour-team.jpeg",
+		alt: "DataTour 2025 team card",
+		caption: "DataTour 2025, team card",
+		ratio: "square",
+	},
+	{
+		id: "whatsapp-agent",
+		src: "/images/project-whatsapp-agent.jpeg",
+		alt: "The WhatsApp agent workflow",
+		caption: "Two agents, one memory",
+		href: "#projects",
+		ratio: "wide",
+	},
+	{
+		id: "ai-engineer",
+		src: "/images/credential-datacamp-ai-engineer.jpeg",
+		alt: "DataCamp AI Engineer for Data Scientists Associate certificate",
+		caption: "AI Engineer Associate",
+		href: "/images/credential-datacamp-ai-engineer.jpeg",
+		ratio: "wide",
+	},
+	{
+		id: "bigquery",
+		src: "/images/project-ecommerce-bigquery.jpeg",
+		alt: "The e-commerce dashboard built on BigQuery",
+		caption: "BigQuery → Looker Studio",
+		href: "#projects",
+		ratio: "wide",
+	},
+	{
+		id: "cansd",
+		src: "/images/credential-cansd-datatour.jpeg",
+		alt: "Certificate of participation, CANSD DataTour 2025",
+		caption: "CANSD, national phase",
+		href: "/images/credential-cansd-datatour.jpeg",
+		ratio: "wide",
+	},
+	{
+		id: "electricity",
+		src: "/images/project-time-series.jpeg",
+		alt: "Seasonal decomposition of the UK electricity series",
+		caption: "Seasonality and residuals",
+		href: "#projects",
+		ratio: "wide",
+	},
+];
