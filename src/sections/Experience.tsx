@@ -11,7 +11,7 @@ export function Experience() {
 				<SectionHeader
 					eyebrow="Where the work happened"
 					title="Experience"
-					description="One role so far, written with enough detail to be discussed in an interview rather than skimmed on a CV."
+					description="Two internships so far, written with enough detail to be discussed in an interview rather than skimmed on a CV."
 				/>
 
 				<div className="mt-14 space-y-5">

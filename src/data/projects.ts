@@ -1,12 +1,10 @@
 import type { Project } from "@/types";
 
 /**
- * Les quatre premiers projets sont réels : titres, technologies et captures
- * viennent de tes propres travaux. Les textes problem / approach / result sont
- * des brouillons rédigés à partir du code et des captures — à relire et
- * corriger avant publication.
- *
- * Le dernier (`demo: true`) est un emplacement gardé pour ton projet XAI.
+ * Les cinq projets sont réels : titres, technologies et captures viennent de
+ * tes propres travaux. Les textes problem / approach / result sont des
+ * brouillons rédigés à partir du code et des captures — à relire et corriger
+ * avant publication.
  */
 export const projects: readonly Project[] = [
 	{
@@ -18,7 +16,7 @@ export const projects: readonly Project[] = [
 		summary:
 			"A retrieval-augmented assistant that helps Cameroonian primary school teachers write their lesson sheets, anchored on the official curriculum and open pedagogical resources rather than on a model's general knowledge.",
 		problem:
-			"Primary school teachers write every lesson sheet by hand, following a strict APC template, while the reference material — curriculum, canevas, protocols — is scattered across PDFs nobody can search. A general-purpose chatbot produces sheets that look right and cite nothing.",
+			"I taught CM1–CM2 myself for a year before this. Every lesson sheet gets written by hand, following a strict APC template, while the reference material — curriculum, canevas, protocols — is scattered across PDFs nobody can search. A general-purpose chatbot produces sheets that look right and cite nothing.",
 		approach:
 			"A PDF parser that reliably extracts the header metadata of real lesson sheets (competence, domain, discipline, title, OPR, OPO) and keeps the step table as raw text, Gemini embeddings, and a PostgreSQL + pgvector store. Ingestion runs end to end: parse, upsert disciplines and units, vectorise in batches, store. Generation sits behind a FastAPI service with a LangGraph agent.",
 		result:
@@ -95,24 +93,23 @@ export const projects: readonly Project[] = [
 		githubUrl: "https://github.com/mentalist011101/electricity-forecast-uk",
 	},
 	{
-		id: "demo-project-xai",
-		demo: true,
+		id: "legal-assistant",
+		demo: false,
 		featured: false,
-		title: "Sentinel",
-		tagline: "Reason codes for a credit model that used to say only yes or no",
+		title: "Legal Assistant",
+		tagline: "Querying dense legal texts by retrieval instead of by memory",
 		summary:
-			"PLACEHOLDER — emplacement gardé pour ton projet d'explicabilité. Remplace cette entrée dans src/data/projects.ts ou supprime-la.",
+			"A retrieval-augmented assistant that lets a user interrogate complex legal resources in plain language and get back an answer grounded in the actual text, not a paraphrase from a model's training data.",
 		problem:
-			"A gradient-boosted scoring model performed well on paper but returned a single number. Loan officers could not justify a refusal to an applicant, and analysts could not tell a data problem from a model problem.",
+			"Legal texts are long, cross-referenced and unforgiving of imprecision. Finding the clause that actually answers a question means reading past everything that almost answers it.",
 		approach:
-			"Kept the strong model and wrapped it: SHAP values for global structure, Anchors for the high-precision local rules, and a small counterfactual search answering 'what would have had to change'. The three views are reconciled into a stable reason-code vocabulary and served behind one endpoint.",
+			"Legal documents are split and embedded, indexed in FAISS, and retrieved by similarity search before generation — the model answers from the passages it was actually given, not from what it remembers about the law.",
 		result:
-			"Every decision carries ranked reason codes and one actionable counterfactual, and the explanation layer surfaced two leaking features that had gone unnoticed in validation.",
-		category: "Explainable AI",
-		status: "research",
-		period: "2026",
-		technologies: ["Python", "scikit-learn", "SHAP", "Anchors", "FastAPI"],
-		githubUrl: "https://github.com/mentalist011101",
+			"A working query interface over a real legal corpus: ask a question in plain language, get an answer traceable to the source passage rather than an unsourced summary.",
+		category: "NLP",
+		status: "shipped",
+		period: "2025",
+		technologies: ["Python", "Embeddings", "FAISS", "RAG", "LLM"],
 	},
 ];
 

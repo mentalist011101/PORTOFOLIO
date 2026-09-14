@@ -21,13 +21,12 @@ export const profile = {
 	portrait: "/images/portrait.jpeg",
 	avatar: "/images/avatar.jpeg",
 	enspyLogo: "/images/enspy-logo.jpeg",
-	email: "luciano.fokouo@example.com",
+	email: "lucianofokouosaadie@gmail.com",
 	github: "https://github.com/mentalist011101",
 	blog: "https://www.irex.aretex.ca/blog",
-	linkedin: "https://www.linkedin.com/in/luciano-fokou-saadie-682513344/",
+	linkedin: "https://www.linkedin.com/in/luciano-fokouo-saadie-luciano/",
 	cv: "/cv/luciano-fokouo-saadie-cv.pdf",
-	/** TODO: replace with the production domain before deploying. */
-	siteUrl: "https://luciano-fokouo-saadie.vercel.app",
+	siteUrl: "https://portofolio-drab-rho.vercel.app",
 } as const;
 
 export const navigation = [

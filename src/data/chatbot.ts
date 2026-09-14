@@ -1,5 +1,6 @@
 import { articles, publishedArticles } from "@/data/articles";
 import { education } from "@/data/education";
+import { experience } from "@/data/experience";
 import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
 import { skillDomains } from "@/data/skills";
@@ -45,7 +46,7 @@ export const knowledgeBase: readonly KnowledgeEntry[] = [
 		keywords: ["project", "projects", "built", "build", "portfolio", "case", "made", "created", "app", "repository"],
 		answer: `${projects.length} selected projects, each written up as problem → approach → result: ${projects
 			.map((project) => `${project.title} (${project.category})`)
-			.join(", ")}. The closest to his research interests is ${projects[0]?.title ?? "Sentinel"} — ${projects[0]?.tagline.toLowerCase() ?? ""}.`,
+			.join(", ")}. The closest to his research interests is ${projects[0]?.title ?? "the featured project"} — ${projects[0]?.tagline.toLowerCase() ?? ""}.`,
 		followUps: ["Tell me about explainable AI", "Does he work with LLMs?", "Where can I find his GitHub?"],
 		link: { label: "Open the projects", href: "#projects" },
 	},
@@ -86,9 +87,11 @@ export const knowledgeBase: readonly KnowledgeEntry[] = [
 		topic: "Experience",
 		keywords: [
 			"experience", "internship", "intern", "job", "work", "professional", "company", "worked",
-			"position", "role", "valione", "microsoft", "graph", "365", "tenant", "stage",
+			"position", "role", "valione", "irex", "microsoft", "graph", "365", "tenant", "stage", "rag",
 		],
-		answer: `Six months as an AI engineer at Valione Services, from March to September 2026: backend development of an agent that administers Microsoft 365 environments, and the tool layer through which language models reach Microsoft Graph data. Agentic orchestration, context management, TypeScript and Node.js. It is written up in full in the Experience section.`,
+		answer: `Two internships so far: ${experience
+			.map((role) => `${role.position} at ${role.organisation} (${role.start}–${role.end})`)
+			.join(", and ")}. ${experience[0]?.description ?? ""} Both are written up in full in the Experience section.`,
 		followUps: ["What projects has he worked on?", "What certifications does he hold?", "How can I contact him?"],
 		link: { label: "See the experience", href: "#experience" },
 	},

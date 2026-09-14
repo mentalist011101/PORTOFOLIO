@@ -38,4 +38,27 @@ export const experience: readonly ExperienceEntry[] = [
 			"Azure",
 		],
 	},
+	{
+		id: "irex",
+		demo: false,
+		organisation: "IREX",
+		organisationUrl: "https://www.irex.aretex.ca/",
+		position: "AI developer intern",
+		kind: "Three-month internship",
+		location: "Yaoundé, Cameroon",
+		start: "Jun 2025",
+		end: "Aug 2025",
+		description:
+			"Design, vector indexing and containerised deployment of a retrieval-augmented system for querying internal documents through an LLM. The same internship is why the two articles below carry an IREX byline — writing them up was part of the job.",
+		responsibilities: [
+			"Built the RAG pipeline: document ingestion, vector indexing and retrieval with RAGFlow",
+			"Containerised the service and put it behind Nginx",
+			"Set up a GitLab CI/CD pipeline for the deployment",
+		],
+		achievements: [
+			"A document-querying assistant deployed and reachable, not just demoed locally",
+			"Two technical articles published on the IREX blog, including the NLP piece linked in Research",
+		],
+		technologies: ["RAGFlow", "LLM", "Docker", "Nginx", "GitLab CI/CD"],
+	},
 ];
