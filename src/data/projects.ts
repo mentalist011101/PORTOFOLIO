@@ -93,23 +93,24 @@ export const projects: readonly Project[] = [
 		githubUrl: "https://github.com/mentalist011101/electricity-forecast-uk",
 	},
 	{
-		id: "legal-assistant",
+		id: "healthtech-assistant",
 		demo: false,
 		featured: false,
-		title: "Legal Assistant",
-		tagline: "Querying dense legal texts by retrieval instead of by memory — corpus phase",
+		title: "HealthTech Assistant",
+		tagline: "A bilingual conversational assistant, built in a 48-hour hackathon",
 		summary:
-			"A retrieval-augmented assistant for querying legal texts in plain language, currently in the corpus-building phase, before the retrieval and generation pipeline goes in.",
+			"A team build for the AI Innovation Hackathon: a conversational assistant that helps patients access and actually understand their health information, with bilingual voice synthesis so an answer can be heard as well as read.",
 		problem:
-			"Legal texts are long, cross-referenced and unforgiving of imprecision. Finding the clause that actually answers a question means reading past everything that almost answers it.",
+			"Health information is written for clinicians, not patients, and language is its own barrier — in a bilingual setting, a patient who cannot make sense of a diagnosis in one language often cannot in the other either.",
 		approach:
-			"The plan: split and embed the legal corpus, index it in FAISS, and retrieve by similarity before generation, so the model answers from the passages it was actually given rather than from what it remembers about the law. The current work is the corpus itself — collecting and structuring the texts the system will eventually query.",
+			"A LangChain-orchestrated LLM pipeline behind a FastAPI backend, a React/TypeScript front end, and Hugging Face models for bilingual text-to-speech.",
 		result:
-			"Not yet a working assistant. The corpus is being assembled; retrieval and generation come next.",
-		category: "NLP",
-		status: "in-progress",
-		period: "2025 — present",
-		technologies: ["Python", "Embeddings", "FAISS", "RAG", "LLM"],
+			"Shipped within the hackathon's timeframe as a team, with a working flow from a patient's question to a spoken, understandable answer.",
+		category: "AI Agents",
+		status: "shipped",
+		period: "2025",
+		technologies: ["LangChain", "Hugging Face", "FastAPI", "React", "TypeScript", "Text-to-speech"],
+		githubUrl: "https://github.com/mentalist011101/Health-Tech-Team",
 	},
 ];
 
