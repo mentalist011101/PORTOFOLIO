@@ -97,18 +97,18 @@ export const projects: readonly Project[] = [
 		demo: false,
 		featured: false,
 		title: "Legal Assistant",
-		tagline: "Querying dense legal texts by retrieval instead of by memory",
+		tagline: "Querying dense legal texts by retrieval instead of by memory — corpus phase",
 		summary:
-			"A retrieval-augmented assistant that lets a user interrogate complex legal resources in plain language and get back an answer grounded in the actual text, not a paraphrase from a model's training data.",
+			"A retrieval-augmented assistant for querying legal texts in plain language, currently in the corpus-building phase, before the retrieval and generation pipeline goes in.",
 		problem:
 			"Legal texts are long, cross-referenced and unforgiving of imprecision. Finding the clause that actually answers a question means reading past everything that almost answers it.",
 		approach:
-			"Legal documents are split and embedded, indexed in FAISS, and retrieved by similarity search before generation — the model answers from the passages it was actually given, not from what it remembers about the law.",
+			"The plan: split and embed the legal corpus, index it in FAISS, and retrieve by similarity before generation, so the model answers from the passages it was actually given rather than from what it remembers about the law. The current work is the corpus itself — collecting and structuring the texts the system will eventually query.",
 		result:
-			"A working query interface over a real legal corpus: ask a question in plain language, get an answer traceable to the source passage rather than an unsourced summary.",
+			"Not yet a working assistant. The corpus is being assembled; retrieval and generation come next.",
 		category: "NLP",
-		status: "shipped",
-		period: "2025",
+		status: "in-progress",
+		period: "2025 — present",
 		technologies: ["Python", "Embeddings", "FAISS", "RAG", "LLM"],
 	},
 ];

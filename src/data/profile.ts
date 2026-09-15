@@ -21,7 +21,7 @@ export const profile = {
 	portrait: "/images/portrait.jpeg",
 	avatar: "/images/avatar.jpeg",
 	enspyLogo: "/images/enspy-logo.jpeg",
-	email: "lucianofokouosaadie@gmail.com",
+	email: "fokouosaadieluciano@gmail.com",
 	github: "https://github.com/mentalist011101",
 	blog: "https://www.irex.aretex.ca/blog",
 	linkedin: "https://www.linkedin.com/in/luciano-fokouo-saadie-luciano/",
