@@ -46,7 +46,7 @@ export const articles: readonly Article[] = [
 		tags: ["FCA", "Classification", "Interpretability"],
 		readingTime: 9,
 		status: "published",
-		url: "/research/fca-supervised-classification.pdf",
+		url: "/research/presentation_fca_classification.pdf",
 	},
 	{
 		id: "anchors-local-explanations",
@@ -60,7 +60,7 @@ export const articles: readonly Article[] = [
 		tags: ["Anchors", "Alibi Explain", "Computer Vision", "XAI"],
 		readingTime: 12,
 		status: "published",
-		url: "/research/anchors-local-explanations.pdf",
+		url: "/research/Anchors_final.pdf",
 	},
 	{
 		id: "interpretability-exploration-fca",
@@ -74,7 +74,7 @@ export const articles: readonly Article[] = [
 		tags: ["Explainable AI", "FCA", "Interpretability"],
 		readingTime: 20,
 		status: "published",
-		url: "/research/interpretability-exploration-fca.pdf",
+		url: "/research/presentation.pdf",
 	},
 ];
 
