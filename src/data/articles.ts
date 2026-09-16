@@ -49,6 +49,20 @@ export const articles: readonly Article[] = [
 		url: "/research/presentation_fca_classification.pdf",
 	},
 	{
+		id: "fca-xai-sangroya-reproduction",
+		demo: false,
+		featured: false,
+		title: "Formal Concept Analysis to explain a black-box model — reproducing Sangroya et al. (2019)",
+		abstract:
+			"A full, independent reproduction of Sangroya, Anantaram, Rawat and Rastogi's framework for explaining a diabetes-prediction LSTM through FCA and a domain ontology — six points the paper leaves unspecified, from the LSTM architecture to the classification rule, each resolved and documented. The paper's own preprocessing numbers turn out to be unreachable (no combination of its stated cleaning steps reaches its claimed sample count); the reproduction still lands on the same qualitative profile as the paper — FCA beats the model on recall, loses on precision — with different absolute numbers, which is itself the finding: symbolic fidelity to a black box is sensitive to choices the source paper never fixes.",
+		date: "2026-08-24",
+		category: "Explainable AI",
+		tags: ["FCA", "XAI", "Reproducibility", "Deep Learning"],
+		readingTime: 11,
+		status: "published",
+		url: "/research/presentation_fca_xai.pdf",
+	},
+	{
 		id: "anchors-local-explanations",
 		demo: false,
 		featured: true,

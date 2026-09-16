@@ -78,7 +78,7 @@ export const knowledgeBase: readonly KnowledgeEntry[] = [
 		id: "articles",
 		topic: "Articles and writing",
 		keywords: ["article", "articles", "blog", "write", "writing", "written", "publication", "publications", "paper", "papers", "notes", "slides", "presentation", "read"],
-		answer: `${articles.length} pieces, kept as a technical notebook rather than a blog: the NLP write-up published on the IREX blog, and slide decks documenting real experiments — Anchors reproduced and stress-tested on an image, a broad map of interpretability leading into Formal Concept Analysis, and a mechanism-by-mechanism reading of FCA-based classifiers.`,
+		answer: `${articles.length} pieces, kept as a technical notebook rather than a blog: the NLP write-up published on the IREX blog, and slide decks documenting real experiments — Anchors reproduced and stress-tested on an image, a paper on FCA-based explanations reproduced end to end with its gaps flagged, a broad map of interpretability leading into Formal Concept Analysis, and a mechanism-by-mechanism reading of FCA-based classifiers.`,
 		followUps: ["What are his research interests?", "Where can I find his GitHub?", "What has he built?"],
 		link: { label: "Read the articles", href: "#research" },
 	},
