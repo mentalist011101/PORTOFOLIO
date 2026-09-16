@@ -1,4 +1,4 @@
-import { articles, publishedArticles } from "@/data/articles";
+import { articles } from "@/data/articles";
 import { education } from "@/data/education";
 import { experience } from "@/data/experience";
 import { profile } from "@/data/profile";
@@ -77,8 +77,8 @@ export const knowledgeBase: readonly KnowledgeEntry[] = [
 	{
 		id: "articles",
 		topic: "Articles and writing",
-		keywords: ["article", "articles", "blog", "write", "writing", "written", "publication", "publications", "paper", "papers", "notes", "read"],
-		answer: `${publishedArticles.length} published pieces and ${articles.length - publishedArticles.length} in draft, kept as a technical notebook rather than a blog. They include "${articles[0]?.title ?? ""}" and work on attribution methods, retrieval failure modes and Formal Concept Analysis.`,
+		keywords: ["article", "articles", "blog", "write", "writing", "written", "publication", "publications", "paper", "papers", "notes", "slides", "presentation", "read"],
+		answer: `${articles.length} pieces, kept as a technical notebook rather than a blog: the NLP write-up published on the IREX blog, and slide decks documenting real experiments — Anchors reproduced and stress-tested on an image, a broad map of interpretability leading into Formal Concept Analysis, and a mechanism-by-mechanism reading of FCA-based classifiers.`,
 		followUps: ["What are his research interests?", "Where can I find his GitHub?", "What has he built?"],
 		link: { label: "Read the articles", href: "#research" },
 	},

@@ -7,7 +7,7 @@ const technologies = new Set(projects.flatMap((project) => project.technologies)
 
 const stats = [
 	{ value: projects.length, label: "selected projects", note: "written up as case studies" },
-	{ value: publishedArticles.length, label: "research notes", note: "published, plus drafts" },
+	{ value: publishedArticles.length, label: "research notes", note: "each one a real experiment" },
 	{ value: skillDomains.length, label: "focus domains", note: "from data to deployment" },
 	{ value: technologies.size, label: "technologies", note: "used across those projects" },
 ];
