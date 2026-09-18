@@ -8,7 +8,7 @@ import { ArrowUpRight, Send } from "@/components/ui/Icons";
 import { suggestedQuestions } from "@/data/chatbot";
 import { profile } from "@/data/profile";
 import type { ChatEngine, ChatTurn } from "@/lib/chatbot";
-import { localEngine } from "@/lib/chatbot";
+import { remoteEngine } from "@/lib/remoteEngine";
 import { cx } from "@/lib/utils";
 
 const GREETING: ChatTurn = {
@@ -22,7 +22,7 @@ interface AskLucianoProps {
 	readonly engine?: ChatEngine;
 }
 
-export function AskLuciano({ engine = localEngine }: AskLucianoProps) {
+export function AskLuciano({ engine = remoteEngine }: AskLucianoProps) {
 	const [turns, setTurns] = useState<readonly ChatTurn[]>([GREETING]);
 	const [draft, setDraft] = useState("");
 	const [pending, setPending] = useState(false);
@@ -89,7 +89,7 @@ export function AskLuciano({ engine = localEngine }: AskLucianoProps) {
 					/>
 					<div className="leading-none">
 						<p className="font-display text-[0.875rem] font-bold tracking-tight text-white">Ask Luciano</p>
-						<p className="mt-1 font-mono text-[0.625rem] text-white/45">local knowledge base · no API call</p>
+						<p className="mt-1 font-mono text-[0.625rem] text-white/45">grounded in this page&apos;s data only</p>
 					</div>
 				</div>
 

@@ -113,6 +113,23 @@ export function HandArrow({ className }: IconProps) {
 	);
 }
 
+export function Sun({ className }: IconProps) {
+	return (
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden className={`${base} ${className ?? ""}`}>
+			<circle cx="12" cy="12" r="4.2" />
+			<path d="M12 2.5v2.4M12 19.1v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7" />
+		</svg>
+	);
+}
+
+export function Moon({ className }: IconProps) {
+	return (
+		<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className={`${base} ${className ?? ""}`}>
+			<path d="M20.6 15.2a8.7 8.7 0 0 1-10.8-10.8A9.2 9.2 0 1 0 20.6 15.2Z" />
+		</svg>
+	);
+}
+
 export function Node({ className }: IconProps) {
 	return (
 		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden className={`${base} ${className ?? ""}`}>

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/Button";
 import { Close, Download, Github, Linkedin, Menu, Node } from "@/components/ui/Icons";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { navigation, profile } from "@/data/profile";
 import { cx } from "@/lib/utils";
 
@@ -118,6 +119,7 @@ export function Header() {
 				</nav>
 
 				<div className="flex items-center gap-2">
+					<ThemeToggle className="hidden sm:grid" />
 					<a
 						href={profile.github}
 						target="_blank"
@@ -162,6 +164,11 @@ export function Header() {
 				className="fixed inset-x-0 bottom-0 top-[68px] z-40 overflow-y-auto border-t border-rule bg-paper paper-grain lg:hidden"
 			>
 				<nav aria-label="Sections" className="shell flex flex-col py-6">
+					<div className="flex items-center justify-between border-b border-rule pb-4">
+						<span className="label-mono text-ink-faint">Theme</span>
+						<ThemeToggle className="border border-rule-strong bg-card" />
+					</div>
+
 					{navigation.map((item, index) => (
 						<a
 							key={item.id}

@@ -52,9 +52,22 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-	themeColor: "#f7f3ea",
-	colorScheme: "light",
+	themeColor: [
+		{ media: "(prefers-color-scheme: light)", color: "#f7f3ea" },
+		{ media: "(prefers-color-scheme: dark)", color: "#12151c" },
+	],
+	colorScheme: "light dark",
 };
+
+const themeInitScript = `
+(function () {
+	try {
+		var stored = localStorage.getItem("theme");
+		var dark = stored === "dark" || (stored !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+		if (dark) document.documentElement.classList.add("dark");
+	} catch (e) {}
+})();
+`;
 
 const personSchema = {
 	"@context": "https://schema.org",
@@ -70,8 +83,13 @@ const personSchema = {
 
 export default function RootLayout({ children }: { readonly children: React.ReactNode }) {
 	return (
-		<html lang="en" className={`${archivo.variable} ${inter.variable} ${mono.variable} ${newsreader.variable}`}>
+		<html
+			lang="en"
+			suppressHydrationWarning
+			className={`${archivo.variable} ${inter.variable} ${mono.variable} ${newsreader.variable}`}
+		>
 			<head>
+				<script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
 				<noscript>
 					<style>{".reveal{opacity:1 !important}"}</style>
 				</noscript>

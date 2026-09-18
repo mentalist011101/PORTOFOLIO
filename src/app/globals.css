@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
 	--color-paper: #f7f3ea;
 	--color-paper-alt: #efe9dc;
@@ -35,6 +37,35 @@
 	--shadow-hard-light-sm: 1px 1px 0 rgba(255, 255, 255, 0.22);
 
 	--ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+	--pattern-grain-1: rgba(22, 24, 29, 0.05);
+	--pattern-grain-2: rgba(22, 24, 29, 0.035);
+	--pattern-grid: rgba(22, 24, 29, 0.055);
+	--pattern-rule: rgba(22, 24, 29, 0.07);
+	color-scheme: light;
+}
+
+.dark {
+	--color-paper: #12151c;
+	--color-paper-alt: #171b24;
+	--color-card: #1b202b;
+	--color-ink: #f1efe8;
+	--color-ink-soft: #b6bac4;
+	--color-ink-faint: #7e8492;
+	--color-night: #090b10;
+	--color-night-soft: #141821;
+	--color-rule: rgba(255, 255, 255, 0.12);
+	--color-rule-strong: rgba(255, 255, 255, 0.26);
+	--shadow-card: 0 1px 1px rgba(0, 0, 0, 0.4), 0 10px 24px -14px rgba(0, 0, 0, 0.65);
+	--shadow-lift: 0 2px 3px rgba(0, 0, 0, 0.5), 0 22px 40px -20px rgba(0, 0, 0, 0.75);
+
+	--pattern-grain-1: rgba(255, 255, 255, 0.045);
+	--pattern-grain-2: rgba(255, 255, 255, 0.03);
+	--pattern-grid: rgba(255, 255, 255, 0.05);
+	--pattern-rule: rgba(255, 255, 255, 0.08);
+	color-scheme: dark;
 }
 
 @layer base {
@@ -83,16 +114,16 @@
 /* Grain and rules that make the page read as paper rather than as a screen. */
 @utility paper-grain {
 	background-image:
-		radial-gradient(rgba(22, 24, 29, 0.05) 1px, transparent 1px),
-		radial-gradient(rgba(22, 24, 29, 0.035) 1px, transparent 1px);
+		radial-gradient(var(--pattern-grain-1) 1px, transparent 1px),
+		radial-gradient(var(--pattern-grain-2) 1px, transparent 1px);
 	background-size: 22px 22px, 37px 37px;
 	background-position: 0 0, 11px 13px;
 }
 
 @utility grid-paper {
 	background-image:
-		linear-gradient(to right, rgba(22, 24, 29, 0.055) 1px, transparent 1px),
-		linear-gradient(to bottom, rgba(22, 24, 29, 0.055) 1px, transparent 1px);
+		linear-gradient(to right, var(--pattern-grid) 1px, transparent 1px),
+		linear-gradient(to bottom, var(--pattern-grid) 1px, transparent 1px);
 	background-size: 26px 26px;
 }
 
@@ -108,8 +139,8 @@
 		to bottom,
 		transparent 0,
 		transparent 27px,
-		rgba(22, 24, 29, 0.07) 27px,
-		rgba(22, 24, 29, 0.07) 28px
+		var(--pattern-rule) 27px,
+		var(--pattern-rule) 28px
 	);
 }
 
