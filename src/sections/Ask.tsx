@@ -1,8 +1,13 @@
 import { AskLuciano } from "@/components/ask-luciano/AskLuciano";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { HandArrow } from "@/components/ui/Icons";
+import { knowledgeBase, suggestedQuestions } from "@/data/chatbot";
 
 export function Ask() {
+	const previewQuestion = suggestedQuestions[1] ?? suggestedQuestions[0] ?? "";
+	const previewEntry = knowledgeBase.find((entry) => entry.id === "research") ?? knowledgeBase[0];
+
 	return (
 		<section id="ask" className="bg-paper paper-grain py-20 sm:py-24">
 			<div className="shell">
@@ -24,20 +29,24 @@ export function Ask() {
 							))}
 						</ul>
 
-						<div className="mt-8 rounded-card border border-dashed border-rule-strong p-5">
-							<h3 className="label-mono text-ink-faint">How the rephrasing stays honest</h3>
-							<p className="mt-3 text-[0.875rem] leading-relaxed text-ink-soft">
-								The engine sits behind a single function type, so swapping the keyword scorer for a hosted model — or
-								back to it — changes one file and no components. A server route retrieves the grounded answer first;
-								only when a match is confident enough does it ask a Hugging Face model to reword it, constrained to the
-								retrieved text. Any failure — no token configured, the model unreachable — falls back to the local
-								answer, silently and instantly: a grounded engine that always answers correctly beats a language model
-								that occasionally invents a diploma.
-							</p>
-							<p className="mt-4 font-mono text-[0.6875rem] text-ink-faint">
-								type ChatEngine = (question, history) =&gt; Promise&lt;ChatReply&gt;
-							</p>
-						</div>
+						{previewEntry !== undefined && (
+							<div className="relative mt-10">
+								<div className="sticky-note -rotate-[1.4deg] rounded-card border border-kraft-deep/30 bg-kraft/70 p-5">
+									<p className="label-mono text-ink/45">a real exchange, not a mockup</p>
+									<p className="mt-3 font-mono text-[0.8125rem] leading-relaxed text-ink">
+										<span className="text-ink/50">Q ·</span> {previewQuestion}
+									</p>
+									<p className="mt-2 font-mono text-[0.8125rem] leading-relaxed text-ink/70">
+										<span className="text-ink/50">A ·</span> {truncate(previewEntry.answer, 128)}
+									</p>
+								</div>
+
+								<HandArrow className="pointer-events-none absolute -right-14 top-full hidden h-16 w-20 -translate-y-2 rotate-[18deg] text-ember/70 lg:block" />
+								<p className="eyebrow pointer-events-none absolute -bottom-9 right-0 hidden w-32 -rotate-2 text-[0.9rem] text-ink-faint lg:block">
+									ask it yourself →
+								</p>
+							</div>
+						)}
 					</Reveal>
 
 					<Reveal delay={120}>
@@ -57,3 +66,11 @@ const TOPICS = [
 	"Experience, credentials and academic record",
 	"How to reach him, and where the code lives",
 ] as const;
+
+function truncate(value: string, maxLength: number): string {
+	if (value.length <= maxLength) {
+		return value;
+	}
+
+	return `${value.slice(0, maxLength).trimEnd()}…`;
+}
