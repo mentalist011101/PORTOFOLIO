@@ -1,4 +1,5 @@
 import { articles } from "@/data/articles";
+import { badges } from "@/data/badges";
 import { education } from "@/data/education";
 import { experience } from "@/data/experience";
 import { profile } from "@/data/profile";
@@ -99,7 +100,7 @@ export const knowledgeBase: readonly KnowledgeEntry[] = [
 		id: "credentials",
 		topic: "Certifications and achievements",
 		keywords: ["certification", "certifications", "certificate", "award", "awards", "distinction", "competition", "achievement", "achievements", "prize", "honour", "honor"],
-		answer: `Two DataCamp certifications — AI Engineer for Data Scientists Associate and AI Fundamentals — a Data Community Africa scholarship, and participation in the national phase of the Coupe d'Afrique des Nations en Science des Données (DataTour 2025). They are listed compactly in the Credentials section: the projects and the articles carry more weight than the certificates, and the layout says so.`,
+		answer: `Two DataCamp certifications — AI Engineer for Data Scientists Associate and AI Fundamentals — a Data Community Africa scholarship, and participation in the national phase of the Coupe d'Afrique des Nations en Science des Données (DataTour 2025). Below them, ${badges.length} course and learning-path badges from Microsoft Learn, IBM SkillsBuild and Cisco, each opening its certificate. The projects and the articles carry more weight than any of this, and the layout says so.`,
 		followUps: ["What is his academic background?", "What has he built?", "Where is he going next?"],
 		link: { label: "See the credentials", href: "#credentials" },
 	},

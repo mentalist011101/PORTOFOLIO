@@ -130,6 +130,17 @@ export interface Credential {
 	readonly image?: string;
 }
 
+export interface Badge {
+	readonly id: string;
+	readonly title: string;
+	readonly issuer: string;
+	readonly date: string;
+	readonly image: string;
+	/** PDF du certificat, servi depuis public/. */
+	readonly certificate: string;
+	readonly verifyUrl?: string;
+}
+
 export interface KnowledgeEntry {
 	readonly id: string;
 	readonly topic: string;
