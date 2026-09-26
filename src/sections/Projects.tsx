@@ -88,7 +88,10 @@ export function Projects() {
 function ProjectCard({ project, index }: { readonly project: Project; readonly index: number }) {
 	return (
 		<article className="group relative flex h-full flex-col rounded-card border border-rule bg-card shadow-card transition-all duration-300 ease-out-soft hover:-translate-y-1 hover:shadow-lift">
-			<Tape className={index % 2 === 0 ? "-top-3 left-8 z-10" : "-top-3 right-8 z-10 rotate-[3deg]"} />
+			<Tape
+				className={index % 2 === 0 ? "-top-3 left-8 z-10" : "-top-3 right-8 z-10 rotate-[3deg]"}
+				label={project.status === "in-progress" ? "in progress" : undefined}
+			/>
 
 			{project.image !== undefined && (
 				<div className="relative aspect-[16/9] overflow-hidden rounded-t-[2px] border-b border-rule bg-paper-alt">

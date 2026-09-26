@@ -17,14 +17,14 @@ export const knowledgeBase: readonly KnowledgeEntry[] = [
 		id: "identity",
 		topic: "Who Luciano is",
 		keywords: ["who", "luciano", "you", "yourself", "about", "introduce", "presentation", "bio", "profile"],
-		answer: `${profile.fullName} — ${profile.title}, based in ${profile.location}. ${profile.positioning} His work moved from data analysis towards machine learning, then towards two things he now spends most of his time on: making models explain themselves, and engineering the systems that serve them.`,
+		answer: `${profile.fullName} — ${profile.title}, based in ${profile.location}. ${profile.positioning} His work moved from data analysis towards machine learning, then towards the two things he spends most of his time on now: representing knowledge so that a system's answers can be checked, and engineering the systems that serve them.`,
 		followUps: ["What does he study?", "What are his research interests?", "What has he built?"],
 	},
 	{
 		id: "studies",
 		topic: "Academic background",
 		keywords: ["study", "studies", "school", "university", "enspy", "degree", "academic", "education", "background", "student", "diploma"],
-		answer: `He is in ${currentDegree?.degree ?? "a Master's"} at ${profile.school}, ${profile.university}, in the ${currentDegree?.field ?? "Data Science"} track. He finished Master 1 first of his cohort — GPA 3.59/4.0, 16.58/20 average, 60/60 credits — and the Licence before it also first, with mention Très Bien in both. The full timeline is in the Academic journey section.`,
+		answer: `He is in ${currentDegree?.degree ?? "a Master's"} at ${profile.school}, ${profile.university}, in the ${currentDegree?.field ?? "Data Science"} track. He finished Master 1 first of his cohort — GPA 3.59/4.0, 16.58/20 average, 60/60 credits — and he was first of 17 in the final year of the Licence, with mention Très Bien in both. The full timeline is in the Academic journey section.`,
 		followUps: ["What is he researching?", "What certifications does he hold?", "Where is he going next?"],
 		link: { label: "See the academic journey", href: "#journey" },
 	},
@@ -54,7 +54,7 @@ export const knowledgeBase: readonly KnowledgeEntry[] = [
 		id: "research",
 		topic: "Research interests",
 		keywords: ["research", "interest", "interests", "phd", "thesis", "master", "masters", "topic", "focus", "area", "science"],
-		answer: `Explainable AI first: attribution methods, rule-based surrogates, counterfactuals, and structural approaches such as Formal Concept Analysis for describing what a model has learned. Second: retrieval-augmented systems and agents, where the open question is grounding rather than fluency. He is looking for a Master's programme and a lab where those two lines meet.`,
+		answer: `Knowledge representation and automated reasoning, applied to systems built on language models. Explainability was the entry point — attribution methods, Anchors, then Formal Concept Analysis — and the reproduction of Sangroya et al. (2019) is where that reading turned into work of his own. The open question he is pursuing is how to ground an answer in explicit knowledge rather than explain it after the fact, in domains where a wrong answer costs something. He is looking for a lab working on hybrid AI.`,
 		followUps: ["What has he written about it?", "What is Formal Concept Analysis?", "How can I contact him?"],
 		link: { label: "Read the research notes", href: "#research" },
 	},
@@ -62,7 +62,7 @@ export const knowledgeBase: readonly KnowledgeEntry[] = [
 		id: "xai",
 		topic: "Explainable AI",
 		keywords: ["explainable", "explainability", "interpretability", "interpretable", "shap", "lime", "anchors", "gradients", "attribution", "xai", "counterfactual", "fca", "concept", "lattice"],
-		answer: `This is the direction he is pushing towards: SHAP for global structure, Anchors when a high-precision local rule is what a user needs, Integrated Gradients on differentiable models, counterfactual search to answer "what would have had to change", and Formal Concept Analysis as a structural alternative to saliency. Most of that work currently lives in his writing rather than in a shipped product — the research notes are the honest evidence.`,
+		answer: `This is how he came into the field, and it stays part of the toolbox: SHAP for global structure, Anchors when a high-precision local rule is what a user needs, counterfactual search to answer "what would have had to change", and Formal Concept Analysis as a structural alternative to saliency. Reproducing Sangroya et al. (2019) is also what showed him the limit: an explanation produced after the fact does not make a system reliable, which is why his work now goes towards knowledge representation and reasoning. The research notes are the honest evidence.`,
 		followUps: ["What projects use this?", "What articles has he written?", "What does he study?"],
 		link: { label: "See the Explainable AI work", href: "#what-i-build" },
 	},
@@ -89,7 +89,7 @@ export const knowledgeBase: readonly KnowledgeEntry[] = [
 			"experience", "internship", "intern", "job", "work", "professional", "company", "worked",
 			"position", "role", "valione", "irex", "microsoft", "graph", "365", "tenant", "stage", "rag",
 		],
-		answer: `Two internships so far: ${experience
+		answer: `Two roles so far: ${experience
 			.map((role) => `${role.position} at ${role.organisation} (${role.start}–${role.end})`)
 			.join(", and ")}. ${experience[0]?.description ?? ""} Both are written up in full in the Experience section.`,
 		followUps: ["What projects has he worked on?", "What certifications does he hold?", "How can I contact him?"],
@@ -138,7 +138,7 @@ export const knowledgeBase: readonly KnowledgeEntry[] = [
 		id: "next",
 		topic: "What comes next",
 		keywords: ["next", "future", "goal", "goals", "looking", "want", "plan", "plans", "ambition", "scholarship", "eiffel", "erasmus", "abroad", "going"],
-		answer: `He is finishing Master 2 at ENSPY and looking abroad for the next step: a research-oriented programme in explainable or trustworthy AI — Eiffel, Erasmus and similar routes — then a doctorate if the right subject and supervisor appear. In the meantime: research internships, and finishing the projects that turn interpretability methods into something an engineer can actually deploy.`,
+		answer: `He is finishing Master 2 at ENSPY, with the dissertation defence scheduled for August 2027, and looking abroad for the next step: a research-oriented programme in hybrid AI — knowledge representation and reasoning alongside learned models — through Eiffel, Erasmus and similar routes, then a doctorate. The aim after that is R&D in hybrid AI.`,
 		followUps: ["What is he researching?", "What is his academic background?", "How can I contact him?"],
 	},
 	{

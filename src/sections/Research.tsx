@@ -23,7 +23,7 @@ export function Research() {
 			<div className="shell py-20 sm:py-24">
 				<SectionHeader
 					tone="light"
-					eyebrow="A technical notebook, not a blog"
+					eyebrow="Writing and experiments"
 					title="Research & articles"
 					description="Where I work things out in writing: attribution methods, retrieval failure modes, and the structures that let us describe what a model has learned. Some are finished, some are notes in progress — both are labelled."
 				/>

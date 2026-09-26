@@ -10,7 +10,7 @@ import { Hero } from "@/sections/Hero";
 import { Journey } from "@/sections/Journey";
 import { Projects } from "@/sections/Projects";
 import { Research } from "@/sections/Research";
-import { StatsBand } from "@/sections/StatsBand";
+import { StackBand } from "@/sections/StackBand";
 import { WhatIBuild } from "@/sections/WhatIBuild";
 
 export default function Home() {
@@ -27,7 +27,7 @@ export default function Home() {
 
 			<main>
 				<Hero />
-				<StatsBand />
+				<StackBand />
 				<About />
 				<WhatIBuild />
 				<Projects />

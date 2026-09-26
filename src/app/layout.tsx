@@ -52,19 +52,16 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-	themeColor: [
-		{ media: "(prefers-color-scheme: light)", color: "#f7f3ea" },
-		{ media: "(prefers-color-scheme: dark)", color: "#12151c" },
-	],
+	themeColor: "#f7f3ea",
 	colorScheme: "light dark",
 };
 
+// Clair par défaut : le mode sombre ne s'applique que si le visiteur l'a choisi,
+// jamais d'après la préférence système.
 const themeInitScript = `
 (function () {
 	try {
-		var stored = localStorage.getItem("theme");
-		var dark = stored === "dark" || (stored !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);
-		if (dark) document.documentElement.classList.add("dark");
+		if (localStorage.getItem("theme") === "dark") document.documentElement.classList.add("dark");
 	} catch (e) {}
 })();
 `;

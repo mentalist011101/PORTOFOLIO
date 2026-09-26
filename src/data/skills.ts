@@ -11,10 +11,10 @@ export const skillDomains: readonly SkillDomain[] = [
 	},
 	{
 		id: "xai",
-		name: "Explainable AI",
-		stance: "A prediction without a reason is a rumour. This is the part of the field I intend to make my own.",
-		skills: ["SHAP", "LIME", "Anchors", "Integrated Gradients", "Counterfactuals", "Interpretable models"],
-		evidence: "Research direction — see the notes below",
+		name: "Knowledge representation & reasoning",
+		stance: "Explainability was my way in. What I want to master is the step before it: putting the knowledge inside the system, so an answer can be checked against something.",
+		skills: ["Formal Concept Analysis", "Ontologies", "Symbolic reasoning", "Hybrid AI", "SHAP", "Anchors", "Counterfactuals"],
+		evidence: "Sangroya et al. (2019) reproduced — see the notes below",
 		accent: "sun",
 	},
 	{

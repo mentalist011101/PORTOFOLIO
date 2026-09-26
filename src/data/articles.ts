@@ -1,15 +1,29 @@
 import type { Article } from "@/types";
 
 /**
- * Les deux premiers articles sont réels et publiés sur le blog IREX.
- * Les suivants sont des sujets annoncés (`demo: true`, statut draft) :
- * remplace-les par tes vraies notes ou supprime-les.
+ * Tous réels. En tête : la reproduction de Sangroya et al. (2019), l'élément le
+ * plus différenciant du dossier. Les deux billets IREX sont de la vulgarisation
+ * technique : ils restent listés, sans occuper les cartes de tête.
  */
 export const articles: readonly Article[] = [
 	{
-		id: "nlp-cest-quoi",
+		id: "fca-xai-sangroya-reproduction",
 		demo: false,
 		featured: true,
+		title: "Formal Concept Analysis to explain a black-box model — reproducing Sangroya et al. (2019)",
+		abstract:
+			"A full, independent reproduction of Sangroya, Anantaram, Rawat and Rastogi's framework for explaining a diabetes-prediction LSTM through FCA and a domain ontology — six points the paper leaves unspecified, from the LSTM architecture to the classification rule, each resolved and documented. The paper's own preprocessing numbers turn out to be unreachable (no combination of its stated cleaning steps reaches its claimed sample count); the reproduction still lands on the same qualitative profile as the paper — FCA beats the model on recall, loses on precision — with different absolute numbers, which is itself the finding: symbolic fidelity to a black box is sensitive to choices the source paper never fixes.",
+		date: "2026-08-24",
+		category: "Explainable AI",
+		tags: ["FCA", "XAI", "Reproducibility", "Deep Learning"],
+		readingTime: 11,
+		status: "published",
+		url: "/research/presentation_fca_xai.pdf",
+	},
+	{
+		id: "nlp-cest-quoi",
+		demo: false,
+		featured: false,
 		title: "Le NLP, c'est quoi ?",
 		abstract:
 			"A long-form French introduction to natural language processing: where the field comes from since 1954, how tokenisation and embeddings turn text into something a model can work with, what the Transformer changed, and where the ethical stakes actually sit. Published on the IREX blog.",
@@ -23,7 +37,7 @@ export const articles: readonly Article[] = [
 	{
 		id: "gitlab-branching",
 		demo: false,
-		featured: true,
+		featured: false,
 		title: "Bonnes pratiques de gestion des branches GitLab",
 		abstract:
 			"A branch model a team can actually agree on: main, rc and develop, the naming conventions that go with them, and the merge-request rules that keep production out of reach of an unreviewed commit. Published on the IREX blog.",
@@ -47,20 +61,6 @@ export const articles: readonly Article[] = [
 		readingTime: 9,
 		status: "published",
 		url: "/research/presentation_fca_classification.pdf",
-	},
-	{
-		id: "fca-xai-sangroya-reproduction",
-		demo: false,
-		featured: false,
-		title: "Formal Concept Analysis to explain a black-box model — reproducing Sangroya et al. (2019)",
-		abstract:
-			"A full, independent reproduction of Sangroya, Anantaram, Rawat and Rastogi's framework for explaining a diabetes-prediction LSTM through FCA and a domain ontology — six points the paper leaves unspecified, from the LSTM architecture to the classification rule, each resolved and documented. The paper's own preprocessing numbers turn out to be unreachable (no combination of its stated cleaning steps reaches its claimed sample count); the reproduction still lands on the same qualitative profile as the paper — FCA beats the model on recall, loses on precision — with different absolute numbers, which is itself the finding: symbolic fidelity to a black box is sensitive to choices the source paper never fixes.",
-		date: "2026-08-24",
-		category: "Explainable AI",
-		tags: ["FCA", "XAI", "Reproducibility", "Deep Learning"],
-		readingTime: 11,
-		status: "published",
-		url: "/research/presentation_fca_xai.pdf",
 	},
 	{
 		id: "anchors-local-explanations",

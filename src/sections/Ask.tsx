@@ -12,7 +12,7 @@ export function Ask() {
 		<section id="ask" className="bg-paper paper-grain py-20 sm:py-24">
 			<div className="shell">
 				<SectionHeader
-					eyebrow="A small demonstration rather than a claim"
+					eyebrow="A small demo you can try"
 					title="Ask Luciano"
 					description="Rather than writing that I build retrieval systems, here is a very small one. Your question is normalised, tokenised and scored against a local knowledge base built from the same data that renders this page. A hosted language model may rephrase that grounded answer for fluency, but it is only ever allowed to reword facts already retrieved — never to add new ones."
 				/>

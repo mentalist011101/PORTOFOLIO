@@ -9,9 +9,9 @@ export function WhatIBuild() {
 		<section id="what-i-build" className="relative bg-paper-alt grid-paper py-20 sm:py-24">
 			<div className="shell">
 				<SectionHeader
-					eyebrow="Capabilities, not a tool list"
+					eyebrow="The five areas I work in"
 					title="What I build"
-					description="Five areas that overlap more than they separate. The technologies matter less than what they are used for, so each one points at the work that backs it."
+					description="In practice these overlap a lot. What matters to me is what the tools are used for, so each card points to the work behind it."
 				/>
 
 				<div className="mt-14 grid items-start gap-5 md:grid-cols-2 lg:grid-cols-3">

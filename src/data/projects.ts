@@ -1,12 +1,30 @@
 import type { Project } from "@/types";
 
 /**
- * Les cinq projets sont réels : titres, technologies et captures viennent de
- * tes propres travaux. Les textes problem / approach / result sont des
- * brouillons rédigés à partir du code et des captures — à relire et corriger
- * avant publication.
+ * Projets réels : titres, technologies et captures viennent de tes propres
+ * travaux. L'assistant juridique ouvre la liste parce que le dossier s'ouvre
+ * sur lui — il est décrit à son état réel, corpus en cours, rien d'indexé.
  */
 export const projects: readonly Project[] = [
+	{
+		id: "legal-assistant",
+		demo: false,
+		featured: true,
+		title: "Legal assistant",
+		tagline: "Building the corpus first, because a legal answer that cannot be traced is worthless",
+		summary:
+			"A retrieval assistant for legal resources, currently at the stage that decides whether the rest is worth building: assembling and structuring the corpus it would have to answer from.",
+		problem:
+			"Law is where a fluent, unsourced answer does the most damage — the reader cannot tell a real citation from an invented one, and the cost of getting it wrong falls on someone who came for help. An assistant worth building here has to answer from a known corpus, and that corpus does not exist in a usable form.",
+		approach:
+			"Collecting and structuring the sources first: the texts, their hierarchy, and the metadata needed to cite them precisely. Vector indexing and the generation layer come after that, on top of a corpus whose shape is already known — not the other way round.",
+		result:
+			"Corpus collection and structuring is the current work; indexing and generation are not built yet. It is listed here as what it is — the early-stage project that motivates the research direction, not a shipped system.",
+		category: "AI Agents",
+		status: "in-progress",
+		period: "2025 — present",
+		technologies: ["Python", "Embeddings", "FAISS", "RAG", "LLM"],
+	},
 	{
 		id: "lesson-assistant",
 		demo: false,

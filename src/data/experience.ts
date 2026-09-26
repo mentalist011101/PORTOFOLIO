@@ -1,8 +1,8 @@
 import type { ExperienceEntry } from "@/types";
 
 /**
- * Réel — attestation de fin de stage signée par Valione Services.
- * Dates reprises du document officiel : 23 mars → 22 septembre 2026.
+ * Réel — Valione : stage professionnel démarré le 23 mars 2026, prolongé au-delà
+ * des 6 mois initiaux ; toujours en poste. IREX : stage de 3 mois, terminé.
  */
 export const experience: readonly ExperienceEntry[] = [
 	{
@@ -10,13 +10,13 @@ export const experience: readonly ExperienceEntry[] = [
 		demo: false,
 		organisation: "Valione Services",
 		organisationUrl: "https://valione-services.com/en/",
-		position: "AI Engineer intern",
-		kind: "Six-month internship",
+		position: "AI Engineer",
+		kind: "Professional internship, ongoing",
 		location: "Yaoundé, Cameroon",
 		start: "Mar 2026",
-		end: "Sep 2026",
+		end: "Present",
 		description:
-			"Backend development of an AI agent that administers Microsoft 365 environments. The interesting part was not the model: it was deciding what a language model is allowed to see and do inside a tenant, and making the tools it calls describable enough to be used correctly.",
+			"Started in March 2026 as a six-month professional internship, extended since and still running alongside the Master's. Backend development of an AI agent that administers Microsoft 365 environments. The interesting part was not the model: it was deciding what a language model is allowed to see and do inside a tenant, and making the tools it calls describable enough to be used correctly.",
 		responsibilities: [
 			"Built the backend of an agent automating Microsoft 365 administration",
 			"Designed the tools through which language models reach and exploit Microsoft Graph data",

@@ -31,7 +31,7 @@ export function About() {
 						<Reveal delay={280} className="mt-10 lg:mt-auto lg:pt-16">
 							<blockquote className="border-l-2 border-ember pl-6">
 								<p className="font-editorial text-[1.35rem] italic leading-snug text-ink">
-									“A model that cannot be interrogated cannot be trusted, corrected, or taught from.”
+									“An answer you cannot check is not an answer. What makes a system reliable is the knowledge it carries, not an explanation added afterwards.”
 								</p>
 							</blockquote>
 						</Reveal>
@@ -71,7 +71,7 @@ export function About() {
 const FACTS = [
 	{ term: "Based in", value: profile.location },
 	{ term: "School", value: `${profile.schoolShort}, ${profile.university}` },
-	{ term: "Working on", value: "Explainability that survives deployment" },
-	{ term: "Languages", value: "French (native), English (professional)" },
-	{ term: "Looking for", value: "A research-oriented programme abroad, and AI engineering work" },
+	{ term: "Working on", value: "Knowledge representation for verifiable answers" },
+	{ term: "Languages", value: "French (native), English B2 (self-assessed)" },
+	{ term: "Looking for", value: "A research-oriented programme abroad in hybrid AI, and AI engineering work" },
 ] as const;

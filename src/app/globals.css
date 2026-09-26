@@ -214,6 +214,62 @@
 	}
 }
 
+/* Bandeau de logos : deux rangées qui défilent en sens inverse. Le pas de
+   translation vaut exactement une copie, d'où la marge portée par la tuile
+   plutôt qu'un `gap` sur la piste (sinon le raccord saute d'un demi-gap). */
+@keyframes marquee-left {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+
+@keyframes marquee-right {
+	from {
+		transform: translateX(-50%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+.tech-strip {
+	mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+}
+
+.tech-track {
+	display: flex;
+	width: max-content;
+	animation: marquee-left var(--tech-duration, 44s) linear infinite;
+}
+
+.tech-track[data-direction="right"] {
+	animation-name: marquee-right;
+}
+
+.tech-strip:hover .tech-track {
+	animation-play-state: paused;
+}
+
+.tech-tile {
+	margin-right: 0.75rem;
+	color: rgba(255, 255, 255, 0.72);
+	background-color: rgba(255, 255, 255, 0.1);
+	border-color: rgba(255, 255, 255, 0.16);
+	transition:
+		color 0.25s var(--ease-out-soft),
+		background-color 0.25s var(--ease-out-soft),
+		transform 0.25s var(--ease-out-soft);
+}
+
+.tech-tile:hover {
+	color: var(--brand);
+	background-color: #fff;
+	transform: translateY(-4px) scale(1.1) rotate(-3deg);
+}
+
 .reveal {
 	opacity: 0;
 }

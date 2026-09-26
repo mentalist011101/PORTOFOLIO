@@ -12,9 +12,9 @@ export function Journey() {
 		<section id="journey" className="bg-paper-alt grid-paper py-20 sm:py-24">
 			<div className="shell">
 				<SectionHeader
-					eyebrow="How the trajectory was built"
+					eyebrow="Where I studied"
 					title="Academic journey"
-					description="Three steps in the same track at ENSPY — Digital Humanities and Data Science. Grades are on the French 20-point scale, GPA on 4."
+					description="Three steps in the same track at ENSPY — Engineering Sciences, Data Science. Hover a card to see the marks: grades are on a 20-point scale, GPA on 4."
 					action={
 						<div className="flex items-center gap-3 rounded-card border border-rule bg-card px-4 py-3 shadow-card">
 							<Image
@@ -51,7 +51,7 @@ export function Journey() {
 
 							<article
 								className={cx(
-									"relative rounded-card border border-kraft-deep/30 bg-kraft/65 p-6 shadow-card transition-transform duration-300 ease-out-soft hover:-translate-y-0.5 sm:p-7",
+									"group relative rounded-card border border-kraft-deep/30 bg-kraft/65 p-6 shadow-card transition-[transform,box-shadow] duration-300 ease-out-soft hover:-translate-y-1 hover:rotate-0 hover:scale-[1.015] hover:shadow-lift sm:p-7",
 									index % 2 === 0 ? "rotate-[-0.4deg]" : "rotate-[0.4deg]",
 								)}
 							>
@@ -79,16 +79,36 @@ export function Journey() {
 
 								<p className="mt-3 text-[0.9375rem] leading-relaxed text-ink-soft">{entry.description}</p>
 
-								{entry.highlights.length > 0 && (
-									<ul className="mt-4 space-y-2">
-										{entry.highlights.map((highlight) => (
-											<li key={highlight} className="flex gap-3 text-[0.875rem] text-ink-soft">
-												<span aria-hidden className="mt-[0.45rem] h-1.5 w-1.5 shrink-0 rounded-full bg-kraft-deep/60" />
-												{highlight}
-											</li>
-										))}
-									</ul>
-								)}
+								<div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out-soft group-hover:grid-rows-[1fr] [@media(hover:none)]:grid-rows-[1fr]">
+									<div className="overflow-hidden">
+										{entry.metrics !== undefined && (
+											<dl className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
+												{entry.metrics.map((metric) => (
+													<div
+														key={metric.label}
+														className="rounded-[4px] border border-kraft-deep/25 bg-paper/70 px-3 py-2.5 shadow-card"
+													>
+														<dt className="font-mono text-[0.625rem] uppercase tracking-wider text-kraft-deep">{metric.label}</dt>
+														<dd className="mt-1 font-display text-[1.0625rem] font-extrabold leading-none tracking-tight text-ink">
+															{metric.value}
+														</dd>
+													</div>
+												))}
+											</dl>
+										)}
+
+										{entry.highlights.length > 0 && (
+											<ul className="mt-4 space-y-2">
+												{entry.highlights.map((highlight) => (
+													<li key={highlight} className="flex gap-3 text-[0.875rem] text-ink-soft">
+														<span aria-hidden className="mt-[0.45rem] h-1.5 w-1.5 shrink-0 rounded-full bg-kraft-deep/60" />
+														{highlight}
+													</li>
+												))}
+											</ul>
+										)}
+									</div>
+								</div>
 							</article>
 						</Reveal>
 					))}

@@ -85,6 +85,19 @@ export interface EducationEntry {
 	readonly distinction?: string;
 	readonly description: string;
 	readonly highlights: readonly string[];
+	readonly metrics?: readonly EducationMetric[];
+}
+
+export interface EducationMetric {
+	readonly label: string;
+	readonly value: string;
+}
+
+export interface TechLogo {
+	readonly name: string;
+	readonly hex: string;
+	/** Absent when the brand has no icon in simple-icons — the tile falls back to its name. */
+	readonly path?: string;
 }
 
 export interface ExperienceEntry {

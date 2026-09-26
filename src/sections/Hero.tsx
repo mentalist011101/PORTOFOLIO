@@ -14,7 +14,7 @@ export function Hero() {
 					<Reveal className="flex items-center gap-3">
 						<span className="label-mono text-ink-faint">{profile.schoolShort} · Yaoundé</span>
 						<span aria-hidden className="h-px w-10 bg-rule-strong" />
-						<span className="label-mono text-rust">AI · XAI · Data</span>
+						<span className="label-mono text-rust">AI · Knowledge · Reasoning</span>
 					</Reveal>
 
 					<Reveal delay={80}>
