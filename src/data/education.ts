@@ -1,3 +1,4 @@
+import { thesis } from "@/data/thesis";
 import type { EducationEntry } from "@/types";
 
 /**
@@ -17,6 +18,7 @@ export const education: readonly EducationEntry[] = [
 		description:
 			"Final year of the Master's programme, oriented towards knowledge representation and reasoning: building systems whose answers can be traced back to something explicit rather than to a model's memory. Dissertation defence is scheduled for August 2027.",
 		highlights: [
+			`Dissertation: « ${thesis.title} », supervised by ${thesis.supervisors.join(" and ")}`,
 			"Research direction: knowledge representation, symbolic reasoning and hybrid AI",
 			"Independent reproduction of Sangroya et al. (2019) — FCA and an ontology to explain an LSTM",
 			"Applied work on retrieval-augmented systems and AI agents",

@@ -5,6 +5,7 @@ import { experience } from "@/data/experience";
 import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
 import { skillDomains } from "@/data/skills";
+import { thesis } from "@/data/thesis";
 import type { KnowledgeEntry } from "@/types";
 
 const currentDegree = education[0];
@@ -54,10 +55,21 @@ export const knowledgeBase: readonly KnowledgeEntry[] = [
 	{
 		id: "research",
 		topic: "Research interests",
-		keywords: ["research", "interest", "interests", "phd", "thesis", "master", "masters", "topic", "focus", "area", "science"],
+		keywords: ["research", "interest", "interests", "phd", "master", "masters", "topic", "focus", "area", "science"],
 		answer: `Knowledge representation and automated reasoning, applied to systems built on language models. Explainability was the entry point — attribution methods, Anchors, then Formal Concept Analysis — and the reproduction of Sangroya et al. (2019) is where that reading turned into work of his own. The open question he is pursuing is how to ground an answer in explicit knowledge rather than explain it after the fact, in domains where a wrong answer costs something. He is looking for a lab working on hybrid AI.`,
 		followUps: ["What has he written about it?", "What is Formal Concept Analysis?", "How can I contact him?"],
 		link: { label: "Read the research notes", href: "#research" },
+	},
+	{
+		id: "thesis",
+		topic: "Master's thesis",
+		keywords: [
+			"thesis", "dissertation", "memoire", "mémoire", "proposal", "uncertainty", "factor", "factors",
+			"bmf", "boolean", "supervisor", "supervisors", "supervised", "defence", "defense",
+		],
+		answer: `His Master's thesis is « ${thesis.title} », supervised by ${thesis.supervisors.join(" and ")} at ENSPY, with the defence planned for ${thesis.defence}. ${thesis.summary} A 2-page preview is public, and the full proposal can be requested from the Research section.`,
+		followUps: ["What is Formal Concept Analysis?", "What are his research interests?", "How can I contact him?"],
+		link: { label: "See the thesis", href: "#thesis" },
 	},
 	{
 		id: "xai",

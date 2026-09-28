@@ -141,6 +141,10 @@ export interface Badge {
 	readonly verifyUrl?: string;
 }
 
+export type ThesisRequestResult =
+	| { readonly ok: true }
+	| { readonly ok: false; readonly reason: "invalid" | "unavailable" };
+
 export interface KnowledgeEntry {
 	readonly id: string;
 	readonly topic: string;

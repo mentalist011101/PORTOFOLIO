@@ -1,9 +1,13 @@
-import { ArrowUpRight, Sparkle } from "@/components/ui/Icons";
+import Image from "next/image";
+
+import { ThesisRequestForm } from "@/components/thesis/ThesisRequestForm";
+import { ArrowRight, ArrowUpRight, Sparkle } from "@/components/ui/Icons";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Tape } from "@/components/ui/Tape";
 import { TornEdge } from "@/components/ui/TornEdge";
 import { articles } from "@/data/articles";
+import { thesis } from "@/data/thesis";
 import { cx, formatDate } from "@/lib/utils";
 import type { Article } from "@/types";
 
@@ -28,7 +32,11 @@ export function Research() {
 					description="Where I work things out in writing: attribution methods, retrieval failure modes, and the structures that let us describe what a model has learned. Some are finished, some are notes in progress — both are labelled."
 				/>
 
-				<div className="mt-14 grid gap-5 md:grid-cols-2">
+				<Reveal className="mt-14">
+					<ThesisCard />
+				</Reveal>
+
+				<div className="mt-8 grid gap-5 md:grid-cols-2">
 					{featured.map((article, index) => (
 						<Reveal key={article.id} delay={index * 90} className="h-full">
 							<FeaturedArticle article={article} />
@@ -48,6 +56,76 @@ export function Research() {
 				</Reveal>
 			</div>
 		</section>
+	);
+}
+
+function ThesisCard() {
+	return (
+		<article
+			id="thesis"
+			className="relative grid gap-8 rounded-card bg-card p-6 text-ink shadow-lift sm:p-8 lg:grid-cols-[12rem_1fr] lg:gap-10"
+		>
+			<Tape label="in progress" className="-top-3 left-10" />
+
+			<a
+				href={thesis.preview}
+				target="_blank"
+				rel="noreferrer noopener"
+				className="group mx-auto block w-40 self-start sm:w-48 lg:w-full"
+				aria-label="Open the 2-page preview of the thesis proposal (PDF)"
+			>
+				<Image
+					src={thesis.cover}
+					alt="Cover page of the thesis proposal"
+					width={662}
+					height={936}
+					sizes="(max-width: 1024px) 12rem, 12rem"
+					className="w-full rounded-[2px] border border-rule shadow-card transition-transform duration-300 ease-out-soft group-hover:-translate-y-1 group-hover:rotate-[-1deg]"
+				/>
+			</a>
+
+			<div>
+				<p className="label-mono text-rust">Master&rsquo;s thesis · defence {thesis.defence}</p>
+				<h3 lang="fr" className="mt-3 text-[1.45rem] font-extrabold leading-tight tracking-tight">
+					{thesis.title}
+				</h3>
+				<p className="mt-2 font-editorial text-[1.0625rem] italic leading-snug text-ink-soft">{thesis.gloss}</p>
+
+				<blockquote className="mt-5 border-l-2 border-ember pl-4 text-[0.9375rem] leading-relaxed text-ink">
+					{thesis.question}
+				</blockquote>
+
+				<p className="mt-4 text-[0.9375rem] leading-relaxed text-ink-soft">{thesis.summary}</p>
+
+				<p className="mt-4 font-mono text-[0.6875rem] leading-relaxed text-ink-faint">
+					Supervised by {thesis.supervisors.join(" and ")} · {thesis.institution}
+				</p>
+
+				<div className="mt-6 border-t border-rule pt-5">
+					<a
+						href={thesis.preview}
+						target="_blank"
+						rel="noreferrer noopener"
+						className="inline-flex items-center gap-1.5 text-[0.875rem] font-medium text-ink transition-colors hover:text-rust"
+					>
+						Read the 2-page preview
+						<span className="font-mono text-[0.6875rem] text-ink-faint">PDF, in French</span>
+						<ArrowUpRight className="text-[0.95rem]" />
+					</a>
+
+					<details className="group/request mt-4">
+						<summary className="flex cursor-pointer list-none items-center gap-2 font-display text-[0.875rem] font-bold tracking-tight text-ink marker:hidden">
+							<ArrowRight className="text-[0.95rem] text-rust transition-transform duration-200 group-open/request:rotate-90" />
+							Request the full proposal
+						</summary>
+						<p className="mt-3 max-w-2xl text-[0.875rem] leading-relaxed text-ink-soft">
+							The full proposal is shared on request. Leave your details and I will send it to you by email.
+						</p>
+						<ThesisRequestForm />
+					</details>
+				</div>
+			</div>
+		</article>
 	);
 }
 

@@ -16,6 +16,7 @@ interface ButtonProps {
 	readonly onClick?: () => void;
 	readonly type?: "button" | "submit";
 	readonly ariaLabel?: string;
+	readonly disabled?: boolean;
 }
 
 export function Button({
@@ -29,9 +30,10 @@ export function Button({
 	onClick,
 	type = "button",
 	ariaLabel,
+	disabled = false,
 }: ButtonProps) {
 	const classes = cx(
-		"group inline-flex items-center justify-center gap-2 rounded-btn font-medium transition-all duration-150 ease-out",
+		"group inline-flex items-center justify-center gap-2 rounded-btn font-medium transition-all duration-150 ease-out disabled:pointer-events-none disabled:opacity-60",
 		size === "sm" ? "px-4 py-2 text-[0.8125rem]" : "px-5 py-3 text-sm",
 		// Ombre pleine décalée, qui s'écrase quand le bouton est enfoncé.
 		"hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[3px] active:translate-y-[3px] active:shadow-none",
@@ -55,7 +57,7 @@ export function Button({
 	}
 
 	return (
-		<button type={type} onClick={onClick} className={classes} aria-label={ariaLabel}>
+		<button type={type} onClick={onClick} className={classes} aria-label={ariaLabel} disabled={disabled}>
 			{children}
 		</button>
 	);
