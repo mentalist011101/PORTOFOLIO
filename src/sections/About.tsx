@@ -72,6 +72,6 @@ const FACTS = [
 	{ term: "Based in", value: profile.location },
 	{ term: "School", value: `${profile.schoolShort}, ${profile.university}` },
 	{ term: "Working on", value: "Knowledge representation for verifiable answers" },
-	{ term: "Languages", value: "French (native), English B2 (self-assessed)" },
+	{ term: "Languages", value: "French (native), English B2 (TOEIC Listening & Reading 880/990)" },
 	{ term: "Looking for", value: "A research-oriented programme abroad in hybrid AI, and AI engineering work" },
 ] as const;
