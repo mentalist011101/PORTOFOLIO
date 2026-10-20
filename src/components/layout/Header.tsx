@@ -105,7 +105,7 @@ export function Header() {
 					<ul className="flex items-center gap-1">
 						{navigation.map((item) => (
 							<li key={item.id}>
-								<a
+								<Link
 									href={item.href}
 									aria-current={current === item.id ? "true" : undefined}
 									className={cx(
@@ -116,7 +116,7 @@ export function Header() {
 									)}
 								>
 									{item.label}
-								</a>
+								</Link>
 							</li>
 						))}
 					</ul>
@@ -174,7 +174,7 @@ export function Header() {
 					</div>
 
 					{navigation.map((item, index) => (
-						<a
+						<Link
 							key={item.id}
 							href={item.href}
 							onClick={close}
@@ -182,7 +182,7 @@ export function Header() {
 						>
 							<span className="label-mono text-ink-faint">{String(index + 1).padStart(2, "0")}</span>
 							{item.label}
-						</a>
+						</Link>
 					))}
 
 					<div className="mt-8 flex flex-wrap gap-3">

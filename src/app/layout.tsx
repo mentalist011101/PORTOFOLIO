@@ -82,6 +82,8 @@ export default function RootLayout({ children }: { readonly children: React.Reac
 	return (
 		<html
 			lang="en"
+			// Défilement doux pour les ancres, mais saut instantané en haut lors d'un changement de page.
+			data-scroll-behavior="smooth"
 			suppressHydrationWarning
 			className={`${archivo.variable} ${inter.variable} ${mono.variable} ${newsreader.variable}`}
 		>

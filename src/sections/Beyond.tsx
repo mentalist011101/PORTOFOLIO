@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "@/components/ui/Icons";
 import { Reveal } from "@/components/ui/Reveal";
@@ -29,7 +31,7 @@ export function Beyond() {
 				<ul className="mt-12 grid gap-6 md:grid-cols-2">
 					{chapters.map((chapter, index) => (
 						<Reveal key={chapter.slug} as="li" delay={index * 80}>
-							<a
+							<Link
 								href={`/beyond/${chapter.slug}`}
 								className={cx(
 									"sticky-note flex h-full min-h-52 flex-col justify-between p-7 transition-transform duration-300 ease-out-soft hover:-translate-y-1 hover:rotate-0",
@@ -48,7 +50,7 @@ export function Beyond() {
 										<span key={section.id}>{section.label}</span>
 									))}
 								</span>
-							</a>
+							</Link>
 						</Reveal>
 					))}
 				</ul>

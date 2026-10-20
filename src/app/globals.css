@@ -332,9 +332,11 @@
 	opacity: 0;
 }
 
+/* Court et peu décalé : après un clic, le contenu doit apparaître sans attente perceptible.
+   Les composants posent --reveal-delay ; on n'en garde que la moitié. */
 .reveal[data-visible="true"] {
-	animation: reveal-in 0.7s var(--ease-out-soft) both;
-	animation-delay: var(--reveal-delay, 0ms);
+	animation: reveal-in 0.45s var(--ease-out-soft) both;
+	animation-delay: calc(var(--reveal-delay, 0ms) * 0.5);
 }
 
 /* Corps des réflexions : HTML produit par marked, donc stylé par sélecteurs plutôt que par classes. */

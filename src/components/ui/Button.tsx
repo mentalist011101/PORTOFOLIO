@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { ReactNode } from "react";
 
 import { cx } from "@/lib/utils";
@@ -40,6 +41,15 @@ export function Button({
 		VARIANTS[variant],
 		className,
 	);
+
+	// Lien interne (hors téléchargement) : navigation côté client, préchargée par Next.
+	if (href !== undefined && href.startsWith("/") && !download && !external) {
+		return (
+			<Link href={href} className={classes} aria-label={ariaLabel}>
+				{children}
+			</Link>
+		);
+	}
 
 	if (href !== undefined) {
 		return (

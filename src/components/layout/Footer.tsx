@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { Mail, Node } from "@/components/ui/Icons";
 import { navigation, profile } from "@/data/profile";
 import { cx } from "@/lib/utils";
@@ -39,9 +41,9 @@ export function Footer() {
 					<ul className="mt-4 space-y-2.5">
 						{navigation.map((item) => (
 							<li key={item.id}>
-								<a href={item.href} className="text-sm text-ink-soft transition-colors hover:text-ink">
+								<Link href={item.href} className="text-sm text-ink-soft transition-colors hover:text-ink">
 									{item.label}
-								</a>
+								</Link>
 							</li>
 						))}
 					</ul>
