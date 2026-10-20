@@ -11,6 +11,8 @@ const nextConfig: NextConfig = {
 	outputFileTracingIncludes: { "/beyond/heart": ["./content/poems/**/*"] },
 	images: {
 		formats: ["image/avif", "image/webp"],
+		// Miniatures des vidéos de la rubrique Inspirations.
+		remotePatterns: [new URL("https://i.ytimg.com/vi/**")],
 	},
 };
 

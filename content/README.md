@@ -59,6 +59,26 @@ L'explication, en Markdown (mêmes possibilités que les réflexions).
 - `video` (facultatif) : l'identifiant YouTube, c'est-à-dire ce qui suit `v=` dans
   l'adresse de la vidéo. Sans cette ligne, la page indique « video coming ».
 
+## Inspirations — `src/data/inspirations.ts`
+
+Les inspirations sont courtes : elles vivent dans un fichier de données plutôt que dans `content/`.
+Une entrée = une chaîne de la télé, dans l'ordre du fichier.
+
+```ts
+{
+	id: "un-identifiant-unique",
+	demo: false,
+	kind: "video",            // ou "link"
+	youtube: "aircAruvnKk",   // pour une vidéo : ce qui suit `v=` dans l'adresse
+	// url: "https://…",      // pour un lien, à la place de youtube
+	title: "Titre",
+	by: "Auteur ou chaîne",
+	topic: "ai",              // design, robotics, ai, science ou other
+	note: "Pourquoi ça m'a marqué, en une ou deux phrases.",
+	lang: "fr",
+},
+```
+
 ## Poèmes — `content/poems/`
 
 ```md

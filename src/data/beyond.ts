@@ -28,10 +28,11 @@ export const heart: BeyondChapter = {
 	slug: "heart",
 	name: "Heart",
 	tagline: "what I love, for no reason",
-	summary: "A small book of poems, and the games I win and lose on chess.com.",
+	summary: "A small book of poems, the games I win and lose on chess.com, and what I keep coming back to.",
 	sections: [
 		{ id: "poetry", label: "Poetry", note: "a small book, in two languages" },
 		{ id: "chess", label: "Chess", note: "live from chess.com" },
+		{ id: "inspirations", label: "Inspirations", note: "videos, design, robotics — what stuck with me" },
 	],
 };
 

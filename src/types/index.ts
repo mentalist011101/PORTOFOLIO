@@ -215,6 +215,24 @@ export interface Poem {
 	readonly stanzas: readonly (readonly string[])[];
 }
 
+export type InspirationTopic = "design" | "robotics" | "ai" | "science" | "other";
+
+interface InspirationBase {
+	readonly id: string;
+	readonly demo: boolean;
+	readonly title: string;
+	/** Auteur ou chaîne. */
+	readonly by: string;
+	readonly topic: InspirationTopic;
+	/** Pourquoi ça m'a marqué, en une ou deux phrases. */
+	readonly note: string;
+	readonly lang: ContentLang;
+}
+
+export type Inspiration =
+	| (InspirationBase & { readonly kind: "video"; readonly youtube: string })
+	| (InspirationBase & { readonly kind: "link"; readonly url: string });
+
 export type ChessTimeClass = "rapid" | "blitz" | "bullet";
 
 export interface RatingPoint {
