@@ -24,15 +24,18 @@ export const profile = {
 	github: "https://github.com/mentalist011101",
 	blog: "https://www.irex.aretex.ca/blog",
 	linkedin: "https://www.linkedin.com/in/luciano-fokouo-saadie-luciano/",
+	chess: "https://www.chess.com/member/mentalist010101",
 	cv: "/cv/luciano-fokouo-saadie-cv.pdf",
 	siteUrl: "https://portofolio-drab-rho.vercel.app",
 } as const;
 
+// Liens absolus (`/#…`) pour que la navigation marche aussi depuis /beyond.
 export const navigation = [
-	{ id: "about", label: "About" },
-	{ id: "what-i-build", label: "What I build" },
-	{ id: "projects", label: "Projects" },
-	{ id: "research", label: "Research" },
-	{ id: "journey", label: "Journey" },
-	{ id: "ask", label: "Ask Luciano" },
+	{ id: "about", label: "About", href: "/#about" },
+	{ id: "what-i-build", label: "What I build", href: "/#what-i-build" },
+	{ id: "projects", label: "Projects", href: "/#projects" },
+	{ id: "research", label: "Research", href: "/#research" },
+	{ id: "journey", label: "Journey", href: "/#journey" },
+	{ id: "beyond", label: "Beyond", href: "/beyond" },
+	{ id: "ask", label: "Ask Luciano", href: "/#ask" },
 ] as const;

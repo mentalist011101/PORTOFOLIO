@@ -68,6 +68,26 @@
 	color-scheme: dark;
 }
 
+/* L'espace échecs reprend l'interface sombre de chess.com, quel que soit le thème du site.
+   Redéfinir les jetons ici suffit : tous les utilitaires descendants les lisent. */
+.chess-room {
+	--color-paper: #312e2b;
+	--color-paper-alt: #2a2825;
+	--color-card: #262522;
+	--color-ink: #ffffff;
+	--color-ink-soft: #c3c2c1;
+	--color-ink-faint: #8f8d8a;
+	--color-rule: rgba(255, 255, 255, 0.1);
+	--color-rule-strong: rgba(255, 255, 255, 0.22);
+	--color-board-light: #ebecd0;
+	--color-board-dark: #739552;
+	/* Plus foncé que le #81b64c de chess.com : le texte blanc du bouton y garde 4:1. */
+	--color-chess-green: #538d33;
+	--color-chess-green-deep: #36621f;
+	--color-chess-line: #6fa03f;
+	color-scheme: dark;
+}
+
 @layer base {
 	html {
 		scroll-behavior: smooth;
@@ -277,6 +297,22 @@
 .reveal[data-visible="true"] {
 	animation: reveal-in 0.7s var(--ease-out-soft) both;
 	animation-delay: var(--reveal-delay, 0ms);
+}
+
+/* Le badge agrandi part du badge survolé : transform-origin est posé en ligne. */
+@keyframes spotlight-in {
+	from {
+		opacity: 0;
+		transform: scale(0.35, 0.6);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.spotlight-in {
+	animation: spotlight-in 0.42s var(--ease-out-soft) both;
 }
 
 .thinking-dot {

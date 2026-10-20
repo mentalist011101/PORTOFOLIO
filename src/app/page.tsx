@@ -2,6 +2,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { About } from "@/sections/About";
 import { Ask } from "@/sections/Ask";
+import { Beyond } from "@/sections/Beyond";
 import { Contact } from "@/sections/Contact";
 import { Credentials } from "@/sections/Credentials";
 import { Experience } from "@/sections/Experience";
@@ -36,6 +37,7 @@ export default function Home() {
 				<Experience />
 				<Credentials />
 				<Gallery />
+				<Beyond />
 				<Ask />
 				<Contact />
 			</main>

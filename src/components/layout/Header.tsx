@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/Button";
@@ -13,6 +15,8 @@ export function Header() {
 	const [open, setOpen] = useState(false);
 	const [active, setActive] = useState<string>();
 	const [progress, setProgress] = useState(0);
+	const pathname = usePathname();
+	const current = pathname === "/beyond" ? "beyond" : active;
 
 	useEffect(() => {
 		const onScroll = () => {
@@ -87,7 +91,7 @@ export function Header() {
 			/>
 
 			<div className="shell flex items-center justify-between gap-4 py-3">
-				<a href="#top" className="flex items-center gap-2.5" onClick={close}>
+				<Link href="/#top" className="flex items-center gap-2.5" onClick={close}>
 					<span className="grid h-9 w-9 place-items-center rounded-[5px] bg-ink shadow-card">
 						<Node className="text-[1.15rem] text-paper" />
 					</span>
@@ -95,18 +99,18 @@ export function Header() {
 						<span className="font-display text-[0.95rem] font-extrabold tracking-tight">Luciano Fokouo</span>
 						<span className="label-mono mt-1 text-ink-faint">AI Engineer</span>
 					</span>
-				</a>
+				</Link>
 
 				<nav aria-label="Sections" className="hidden lg:block">
 					<ul className="flex items-center gap-1">
 						{navigation.map((item) => (
 							<li key={item.id}>
 								<a
-									href={`#${item.id}`}
-									aria-current={active === item.id ? "true" : undefined}
+									href={item.href}
+									aria-current={current === item.id ? "true" : undefined}
 									className={cx(
 										"rounded-full px-3.5 py-2 text-[0.8125rem] transition-colors duration-200",
-										active === item.id
+										current === item.id
 											? "bg-ink text-paper"
 											: "text-ink-soft hover:bg-ink/5 hover:text-ink",
 									)}
@@ -172,7 +176,7 @@ export function Header() {
 					{navigation.map((item, index) => (
 						<a
 							key={item.id}
-							href={`#${item.id}`}
+							href={item.href}
 							onClick={close}
 							className="flex items-baseline gap-4 border-b border-rule py-4 font-display text-2xl font-extrabold tracking-tight text-ink"
 						>

@@ -141,6 +141,72 @@ export interface Badge {
 	readonly verifyUrl?: string;
 }
 
+export type ActivityKind = "conference" | "hackathon" | "competition" | "volunteering" | "talk" | "workshop";
+
+export type ActivityRole = "attended" | "organised" | "participant" | "speaker" | "volunteer";
+
+export interface Activity {
+	readonly id: string;
+	readonly demo: boolean;
+	readonly title: string;
+	readonly organiser: string;
+	readonly kind: ActivityKind;
+	readonly role: ActivityRole;
+	readonly start: string;
+	readonly end?: string;
+	readonly location: string;
+	readonly summary: string;
+	readonly highlights?: readonly string[];
+	/** La première s'affiche en grand dans la vue agrandie, les suivantes en vignettes. */
+	readonly photos?: readonly ActivityPhoto[];
+	readonly url?: string;
+}
+
+export interface ActivityPhoto {
+	readonly src: string;
+	readonly alt: string;
+}
+
+export type ChessTimeClass = "rapid" | "blitz" | "bullet";
+
+export interface RatingPoint {
+	/** YYYY-MM */
+	readonly month: string;
+	readonly rating: number;
+}
+
+export interface ChessTimeControl {
+	readonly timeClass: ChessTimeClass;
+	readonly current: number;
+	readonly best?: number;
+	readonly bestGameUrl?: string;
+	readonly record: { readonly win: number; readonly loss: number; readonly draw: number };
+	readonly history: readonly RatingPoint[];
+}
+
+export interface ChessPlayer {
+	readonly username: string;
+	readonly rating: number;
+}
+
+export interface ChessGame {
+	readonly url: string;
+	readonly fen: string;
+	readonly timeClass: string;
+	/** YYYY-MM-DD */
+	readonly date: string;
+	readonly color: "white" | "black";
+	readonly me: ChessPlayer;
+	readonly opponent: ChessPlayer;
+	readonly outcome: "won" | "lost" | "drew";
+	/** Code chess.com du perdant ou de la nulle : checkmated, resigned, timeout, agreed… */
+	readonly reason: string;
+}
+
+export type ChessProfileResult =
+	| { readonly ok: true; readonly controls: readonly ChessTimeControl[]; readonly latestGame?: ChessGame }
+	| { readonly ok: false };
+
 export type ThesisRequestResult =
 	| { readonly ok: true }
 	| { readonly ok: false; readonly reason: "invalid" | "unavailable" };

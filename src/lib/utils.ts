@@ -11,6 +11,14 @@ export function formatDate(iso: string): string {
 	});
 }
 
+export function formatMonth(month: string): string {
+	return new Date(`${month}-01T00:00:00Z`).toLocaleDateString("en-GB", {
+		month: "short",
+		year: "numeric",
+		timeZone: "UTC",
+	});
+}
+
 export function padIndex(index: number): string {
 	return String(index + 1).padStart(2, "0");
 }

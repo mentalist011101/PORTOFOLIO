@@ -13,6 +13,39 @@ export function ArrowRight({ className }: IconProps) {
 	);
 }
 
+export function ArrowLeft({ className }: IconProps) {
+	return (
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden className={`${base} ${className ?? ""}`}>
+			<path d="M20 12H5" />
+			<path d="m11 6-6 6 6 6" />
+		</svg>
+	);
+}
+
+export function Stopwatch({ className }: IconProps) {
+	return (
+		<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className={`${base} ${className ?? ""}`}>
+			<path d="M10 1.5h4V3.6a8.5 8.5 0 1 1-4 0zM12 7a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13m-.9 2h1.8v4.6l3 1.8-.9 1.5-3.9-2.3z" />
+		</svg>
+	);
+}
+
+export function Lightning({ className }: IconProps) {
+	return (
+		<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className={`${base} ${className ?? ""}`}>
+			<path d="M13.5 1.5 4 13.5h6.5L9 22.5l10.5-13H13z" />
+		</svg>
+	);
+}
+
+export function Bullet({ className }: IconProps) {
+	return (
+		<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className={`${base} ${className ?? ""}`}>
+			<path d="M15.7 3.2c2.3-1 4.6-.8 5 .1.4.9-1.1 2.7-3.4 3.7l-8.6 8.6-3.3-3.3zM5.2 13.4l3.4 3.4-1.4 1.4-3.4-3.4zM3.1 16.4l2.5 2.5-2.9 2.9-2.5-2.5z" />
+		</svg>
+	);
+}
+
 export function ArrowUpRight({ className }: IconProps) {
 	return (
 		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden className={`${base} ${className ?? ""}`}>
