@@ -418,5 +418,5 @@ const ROLES: Record<ActivityRole, { readonly badge: string; readonly tone: strin
 	participant: { badge: "Participant", tone: "bg-ember text-white" },
 	organised: { badge: "Organiser", tone: "bg-night text-white" },
 	speaker: { badge: "Speaker", tone: "bg-rust text-white" },
-	volunteer: { badge: "Volunteer", tone: "bg-sun text-ink" },
+	volunteer: { badge: "Volunteer", tone: "on-light bg-sun text-ink" },
 };

@@ -17,9 +17,9 @@ export function Chalkboard({ children, className }: { readonly children: ReactNo
 			</div>
 
 			<div aria-hidden className="absolute inset-x-6 bottom-0 h-5 rounded-b-[4px] bg-kraft-deep shadow-[0_6px_10px_-6px_rgba(22,24,29,0.6)] sm:inset-x-10">
-				<span className="absolute -top-1.5 left-[12%] h-2.5 w-14 rotate-[-3deg] rounded-full bg-[#f4f2ea] shadow-sm" />
-				<span className="absolute -top-1.5 left-[24%] h-2.5 w-9 rotate-[4deg] rounded-full bg-sun shadow-sm" />
-				<span className="absolute -top-1.5 left-[31%] h-2.5 w-7 rotate-[-2deg] rounded-full bg-ember/90 shadow-sm" />
+				<span className="absolute -top-1.5 left-[8%] h-2.5 w-14 rotate-[-3deg] rounded-full bg-[#f4f2ea] shadow-sm" />
+				<span className="absolute -top-1.5 left-[calc(8%+4.75rem)] h-2.5 w-9 rotate-[4deg] rounded-full bg-sun shadow-sm" />
+				<span className="absolute -top-1.5 left-[calc(8%+7.5rem)] h-2.5 w-7 rotate-[-2deg] rounded-full bg-ember/90 shadow-sm" />
 				<span className="absolute -top-4 right-[14%] h-5 w-20 rounded-[3px] bg-[#3b3530] shadow-md before:absolute before:inset-x-0 before:bottom-0 before:h-1.5 before:rounded-b-[3px] before:bg-[#d9d4c7]/80" />
 			</div>
 		</div>

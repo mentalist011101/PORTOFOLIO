@@ -31,7 +31,7 @@ export async function Poetry() {
 						{/* Tranche et épaisseur du livre, sous les deux pages. */}
 						<span aria-hidden className="absolute inset-x-3 -bottom-2 h-4 rounded-b-[6px] bg-kraft-deep/35" />
 						<span aria-hidden className="absolute inset-x-1.5 -bottom-1 h-4 rounded-b-[6px] bg-card/70" />
-						<Ribbon className="-top-3 right-[14%] h-[calc(100%+3.5rem)]" />
+						<Ribbon className="-top-3 left-2 h-[calc(100%+3.5rem)] w-4 md:left-auto md:right-[14%] md:w-5" />
 
 						<div className="relative grid overflow-hidden rounded-[6px] shadow-lift md:grid-cols-2">
 							<nav

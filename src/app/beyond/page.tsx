@@ -76,7 +76,7 @@ export default function BeyondPage() {
 						</div>
 
 						<div className="relative hidden lg:block">
-							<div className="sticky-note relative rotate-[3deg] bg-sun p-6 pt-8">
+							<div className="sticky-note on-light relative rotate-[3deg] bg-sun p-6 pt-8">
 								<Tape className="-top-3 left-1/2 -translate-x-1/2 rotate-[-4deg]" />
 								<p className="label-mono text-ink/55">Note to self</p>
 								<p className="mt-3 font-display text-[1.5rem] font-extrabold leading-tight tracking-tight text-ink">

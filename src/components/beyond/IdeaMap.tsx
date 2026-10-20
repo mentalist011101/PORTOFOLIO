@@ -111,7 +111,11 @@ export function IdeaMap({ nodes, edges, cloud, width, height }: IdeaMapProps) {
 						textAnchor="middle"
 						dominantBaseline="central"
 						onPointerEnter={() => setActive(node.id)}
-						className={cx("cursor-default fill-ink font-hand text-[22px] font-medium transition-opacity duration-300", dimmed(node.id) && "opacity-30")}
+						className={cx(
+							"cursor-default font-hand text-[22px] font-medium transition-opacity duration-300",
+							active === node.id ? "fill-[#16181d]" : "fill-ink",
+							dimmed(node.id) && "opacity-30",
+						)}
 					>
 						{node.label}
 					</text>

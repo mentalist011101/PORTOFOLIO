@@ -83,7 +83,7 @@ export default async function ExplainerPage({ params }: PageProps) {
 				</section>
 
 				<article lang={explainer.lang} className="mx-auto max-w-[44rem] px-5 pb-20 pt-12 sm:px-8">
-					<aside className="sticky-note relative rotate-[-0.8deg] bg-sun px-6 pb-6 pt-7">
+					<aside className="sticky-note on-light relative rotate-[-0.8deg] bg-sun px-6 pb-6 pt-7">
 						<Tape className="-top-3 left-8" />
 						<p className="font-hand text-[1.3rem] font-bold leading-none text-ink/60" lang="en">
 							in one sentence

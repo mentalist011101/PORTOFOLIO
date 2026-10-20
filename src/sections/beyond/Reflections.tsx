@@ -46,10 +46,15 @@ export async function Reflections() {
 
 					<Reveal className="relative lg:sticky lg:top-28">
 						<p className="flex items-end gap-2 pl-4 font-hand text-[1.45rem] font-medium leading-none text-ink-soft">
-							how they connect — hover a theme
+							how they connect — hover or tap a theme
 							<HandArrow className="h-8 w-12 rotate-[25deg] text-ink-faint" />
 						</p>
-						<IdeaMap nodes={map.nodes} edges={map.edges} cloud={MAP.cloud} width={MAP.width} height={MAP.height} />
+						{/* Sur téléphone, la carte garde une taille lisible et se parcourt du doigt. */}
+						<div className="-mx-5 overflow-x-auto px-5 [scrollbar-width:none] sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden">
+							<div className="min-w-[600px] sm:min-w-0">
+								<IdeaMap nodes={map.nodes} edges={map.edges} cloud={MAP.cloud} width={MAP.width} height={MAP.height} />
+							</div>
+						</div>
 					</Reveal>
 				</div>
 			</div>

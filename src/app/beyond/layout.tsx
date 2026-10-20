@@ -9,7 +9,7 @@ const handFont = { "--font-hand": 'var(--font-caveat), "Segoe Print", cursive' }
 
 export default function BeyondLayout({ children }: { readonly children: React.ReactNode }) {
 	return (
-		<div className={caveat.variable} style={handFont}>
+		<div className={`beyond-space ${caveat.variable}`} style={handFont}>
 			{children}
 		</div>
 	);

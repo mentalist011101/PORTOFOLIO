@@ -14,7 +14,7 @@ export function Beyond() {
 			kind: "Activities",
 			title: "Conferences, hackathons, volunteering",
 			note: `${realActivities} logged so far, more as they happen`,
-			tone: "bg-sun",
+			tone: "on-light bg-sun",
 			rotation: "-rotate-[1.2deg]",
 		},
 		{

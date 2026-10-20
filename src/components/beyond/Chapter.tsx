@@ -74,7 +74,7 @@ export function Chapter({ chapter, children }: ChapterProps) {
 					<section className="border-t border-rule bg-card rule-line py-16">
 						<div className="shell flex flex-col items-start gap-3 pl-9 sm:pl-14">
 							<p className="font-hand text-[1.5rem] font-medium leading-none text-ink-soft">turn the page…</p>
-							<Link href={`/beyond/${other.slug}`} className="group inline-flex items-baseline gap-4 text-ink transition-colors hover:text-rust">
+							<Link href={`/beyond/${other.slug}`} className="group inline-flex flex-wrap items-baseline gap-x-4 gap-y-1 text-ink transition-colors hover:text-rust">
 								<span className="font-display text-[clamp(2rem,5vw,3rem)] font-extrabold leading-none tracking-tight">{other.name}</span>
 								<span className="font-hand text-[1.6rem] font-bold text-rust">{other.tagline}</span>
 								<ArrowRight className="self-center text-[1.5rem] transition-transform group-hover:translate-x-1" />

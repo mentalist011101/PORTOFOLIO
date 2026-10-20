@@ -113,6 +113,19 @@
 		0.5px 0.5px 0 rgba(244, 242, 234, 0.15);
 }
 
+/* Surface claire fixe (post-it jaune, bande de badge) : l'encre reste sombre, même en mode sombre. */
+.on-light {
+	--color-ink: #16181d;
+	--color-ink-soft: #5c6069;
+	--color-ink-faint: #8a8d95;
+}
+
+/* Dans l'espace Beyond, le rouille sert d'encre (notes, tampons, lettrines) : plus clair en mode
+   sombre pour garder le contraste. Le reste du site n'est pas concerné. */
+.dark .beyond-space {
+	--color-rust: #e8763a;
+}
+
 @layer base {
 	html {
 		scroll-behavior: smooth;
