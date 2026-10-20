@@ -10,7 +10,7 @@ export function Beyond() {
 
 	const doors = [
 		{
-			href: "/beyond#activities",
+			href: "/beyond/mind#activities",
 			kind: "Activities",
 			title: "Conferences, hackathons, volunteering",
 			note: `${realActivities} logged so far, more as they happen`,
@@ -18,7 +18,23 @@ export function Beyond() {
 			rotation: "-rotate-[1.2deg]",
 		},
 		{
-			href: "/beyond#chess",
+			href: "/beyond/mind#reflections",
+			kind: "Reflections",
+			title: "Thinking out loud about AI and society",
+			note: "Essays, in French or English",
+			tone: "bg-card border border-rule",
+			rotation: "rotate-[0.8deg]",
+		},
+		{
+			href: "/beyond/heart#poetry",
+			kind: "Poetry",
+			title: "A small book of poems",
+			note: "Read one page at a time",
+			tone: "bg-paper border border-rule",
+			rotation: "-rotate-[0.6deg]",
+		},
+		{
+			href: "/beyond/heart#chess",
 			kind: "Chess",
 			title: "My chess.com rating, month by month",
 			note: "Live from the chess.com API",
@@ -38,7 +54,7 @@ export function Beyond() {
 							<span className="font-editorial text-[0.95em] font-normal italic">the code</span>
 						</>
 					}
-					description="Everything above is what I build. This is the rest: the events I take part in, and chess."
+					description="Everything above is what I build. This is the rest: the events I show up to, what I think, what I write, and chess."
 					action={
 						<Button href="/beyond" variant="outline">
 							Open the page
@@ -47,7 +63,7 @@ export function Beyond() {
 					}
 				/>
 
-				<ul className="mt-12 grid gap-5 sm:grid-cols-2">
+				<ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
 					{doors.map((door, index) => (
 						<Reveal key={door.href} as="li" delay={index * 80}>
 							<a

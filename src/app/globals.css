@@ -25,6 +25,7 @@
 	--font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
 	--font-mono: var(--font-mono-face), "JetBrains Mono", ui-monospace, monospace;
 	--font-editorial: var(--font-newsreader), "Newsreader", Georgia, serif;
+	--font-hand: var(--font-caveat), "Caveat", "Segoe Print", cursive;
 
 	--radius-card: 3px;
 	--radius-btn: 6px;
@@ -297,6 +298,155 @@
 .reveal[data-visible="true"] {
 	animation: reveal-in 0.7s var(--ease-out-soft) both;
 	animation-delay: var(--reveal-delay, 0ms);
+}
+
+/* Corps des réflexions : HTML produit par marked, donc stylé par sélecteurs plutôt que par classes. */
+.essay {
+	font-family: var(--font-editorial);
+	font-size: 1.1875rem;
+	line-height: 1.75;
+	color: var(--color-ink);
+}
+
+.essay > * + * {
+	margin-top: 1.2em;
+}
+
+.essay > p:first-of-type::first-letter {
+	float: left;
+	margin: 0.06em 0.1em 0 0;
+	font-family: var(--font-display);
+	font-size: 3.7em;
+	font-style: normal;
+	font-weight: 800;
+	line-height: 0.82;
+	color: var(--color-rust);
+}
+
+.essay h2,
+.essay h3 {
+	margin-top: 2.2em;
+	line-height: 1.2;
+	color: var(--color-ink);
+}
+
+.essay h2 {
+	font-size: 1.55rem;
+}
+
+.essay h3 {
+	font-size: 1.25rem;
+}
+
+.essay h2 + *,
+.essay h3 + * {
+	margin-top: 0.7em;
+}
+
+.essay a {
+	text-decoration: underline;
+	text-decoration-color: var(--color-rule-strong);
+	text-underline-offset: 4px;
+	transition: text-decoration-color 0.2s;
+}
+
+.essay a:hover {
+	text-decoration-color: var(--color-ember);
+}
+
+.essay blockquote {
+	margin-block: 1.8em;
+	border-left: 3px solid var(--color-ember);
+	padding-left: 1.2em;
+	font-size: 1.45rem;
+	font-style: italic;
+	line-height: 1.4;
+}
+
+.essay ul,
+.essay ol {
+	padding-left: 1.3em;
+}
+
+.essay ul {
+	list-style: disc;
+}
+
+.essay ol {
+	list-style: decimal;
+}
+
+.essay li + li {
+	margin-top: 0.4em;
+}
+
+.essay li::marker {
+	color: var(--color-ember);
+}
+
+.essay code {
+	border-radius: 3px;
+	background: var(--color-paper-alt);
+	padding: 0.1em 0.35em;
+	font-family: var(--font-mono);
+	font-size: 0.82em;
+}
+
+.essay hr {
+	margin-block: 2.4em;
+	border: 0;
+	text-align: center;
+}
+
+.essay hr::after {
+	content: "* * *";
+	letter-spacing: 0.6em;
+	color: var(--color-ink-faint);
+}
+
+/* Les vers apparaissent un à un ; --line est posé en ligne sur chaque vers. */
+@keyframes verse-in {
+	from {
+		opacity: 0;
+		transform: translateY(4px);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.verse {
+	animation: verse-in 0.6s var(--ease-out-soft) both;
+	animation-delay: calc(var(--line, 0) * 70ms + 150ms);
+}
+
+/* Pétales qui tombent en se balançant ; --sway (amplitude) est posé en ligne sur chaque pétale. */
+@keyframes petal-fall {
+	0% {
+		opacity: 0;
+		transform: translate3d(0, -20px, 0) rotate(0deg);
+	}
+	10% {
+		opacity: 1;
+	}
+	35% {
+		transform: translate3d(var(--sway, 40px), 380px, 0) rotate(140deg);
+	}
+	65% {
+		transform: translate3d(calc(var(--sway, 40px) * -0.6), 760px, 0) rotate(260deg);
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translate3d(calc(var(--sway, 40px) * 0.4), 1150px, 0) rotate(400deg);
+	}
+}
+
+.petal {
+	animation: petal-fall linear infinite;
 }
 
 /* Le badge agrandi part du badge survolé : transform-origin est posé en ligne. */

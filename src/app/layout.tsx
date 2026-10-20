@@ -8,7 +8,7 @@ import "./globals.css";
 const archivo = Archivo({ subsets: ["latin"], variable: "--font-archivo", display: "swap" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono-face", display: "swap" });
-const newsreader = Newsreader({ subsets: ["latin"], style: ["italic"], variable: "--font-newsreader", display: "swap" });
+const newsreader = Newsreader({ subsets: ["latin"], style: ["normal", "italic"], variable: "--font-newsreader", display: "swap" });
 
 const description =
 	"Portfolio of Luciano Fokouo Saadie, AI Engineer and Data Scientist at ENSPY, Université de Yaoundé I. Work in artificial intelligence, explainable AI, machine learning, data science and AI engineering.";

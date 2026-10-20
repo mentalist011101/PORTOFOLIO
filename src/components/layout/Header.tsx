@@ -16,7 +16,7 @@ export function Header() {
 	const [active, setActive] = useState<string>();
 	const [progress, setProgress] = useState(0);
 	const pathname = usePathname();
-	const current = pathname === "/beyond" ? "beyond" : active;
+	const current = pathname.startsWith("/beyond") ? "beyond" : active;
 
 	useEffect(() => {
 		const onScroll = () => {

@@ -7,6 +7,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
 	turbopack: { root: dirname(fileURLToPath(import.meta.url)) },
 	reactStrictMode: true,
+	// /beyond/heart est revalidée (ISR, pour les échecs) : à chaque rendu serveur elle relit content/poems.
+	outputFileTracingIncludes: { "/beyond/heart": ["./content/poems/**/*"] },
 	images: {
 		formats: ["image/avif", "image/webp"],
 	},

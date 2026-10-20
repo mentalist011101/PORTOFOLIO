@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Fragment, useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import type { PointerEvent as ReactPointerEvent } from "react";
 
+import { PlaceholderStamp } from "@/components/beyond/PlaceholderStamp";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Close } from "@/components/ui/Icons";
 import { cx, formatDate } from "@/lib/utils";
 import type { Activity, ActivityRole } from "@/types";
@@ -383,19 +384,6 @@ function Fact({ term, value, capitalize = false }: { readonly term: string; read
 			<dt className="font-mono text-[0.625rem] uppercase tracking-[0.16em] text-ink-faint">{term}</dt>
 			<dd className={cx("mt-0.5 text-ink", capitalize && "capitalize")}>{value}</dd>
 		</div>
-	);
-}
-
-function PlaceholderStamp({ className }: { readonly className?: string }) {
-	return (
-		<span
-			className={cx(
-				"inline-block rotate-[-3deg] rounded-[3px] border-2 border-rust px-2 py-0.5 font-mono text-[0.6875rem] font-bold uppercase tracking-[0.16em] text-rust",
-				className,
-			)}
-		>
-			Placeholder
-		</span>
 	);
 }
 

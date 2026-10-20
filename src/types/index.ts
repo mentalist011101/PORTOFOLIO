@@ -167,6 +167,35 @@ export interface ActivityPhoto {
 	readonly alt: string;
 }
 
+export type ContentLang = "en" | "fr";
+
+export interface Reflection {
+	readonly slug: string;
+	readonly demo: boolean;
+	readonly title: string;
+	/** Libellé court pour le graphe des idées ; le titre sinon. */
+	readonly short: string;
+	/** YYYY-MM-DD */
+	readonly date: string;
+	readonly lang: ContentLang;
+	readonly summary: string;
+	readonly themes: readonly string[];
+	readonly readingTime: number;
+	readonly html: string;
+}
+
+export interface Poem {
+	readonly slug: string;
+	readonly demo: boolean;
+	readonly title: string;
+	/** YYYY-MM-DD */
+	readonly date: string;
+	readonly lang: ContentLang;
+	/** Absent pour mes poèmes ; renseigné pour un texte d'un autre auteur. */
+	readonly author?: string;
+	readonly stanzas: readonly (readonly string[])[];
+}
+
 export type ChessTimeClass = "rapid" | "blitz" | "bullet";
 
 export interface RatingPoint {
