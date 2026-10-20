@@ -3,7 +3,7 @@ import path from "node:path";
 
 import { marked } from "marked";
 
-import type { ContentLang, Poem, Reflection } from "@/types";
+import type { ContentLang, Explainer, ExplainerLevel, Poem, Reflection } from "@/types";
 
 export async function getReflections(): Promise<readonly Reflection[]> {
 	const entries = await readEntries("reflections");
@@ -20,10 +20,32 @@ export async function getReflections(): Promise<readonly Reflection[]> {
 				lang: lang(meta, slug),
 				summary: text(meta, "summary", slug),
 				themes: list(meta.themes),
-				readingTime: Math.max(1, Math.round(body.split(/\s+/).filter(Boolean).length / 220)),
+				readingTime: readingTime(body),
 				html: marked.parse(body, { async: false }),
 			};
 		})
+		.sort((a, b) => b.date.localeCompare(a.date));
+}
+
+export async function getExplainers(): Promise<readonly Explainer[]> {
+	const entries = await readEntries("explainers");
+
+	return entries
+		.map(
+			({ slug, meta, body }): Explainer => ({
+				slug,
+				demo: meta.demo === "true",
+				title: text(meta, "title", slug),
+				date: text(meta, "date", slug),
+				lang: lang(meta, slug),
+				summary: text(meta, "summary", slug),
+				level: level(meta, slug),
+				tldr: text(meta, "tldr", slug),
+				video: meta.video,
+				readingTime: readingTime(body),
+				html: marked.parse(body, { async: false }),
+			}),
+		)
 		.sort((a, b) => b.date.localeCompare(a.date));
 }
 
@@ -110,6 +132,18 @@ function lang(meta: Readonly<Record<string, string>>, slug: string): ContentLang
 		throw new ContentError(slug, `lang must be "en" or "fr", got "${value}"`);
 	}
 	return value;
+}
+
+function level(meta: Readonly<Record<string, string>>, slug: string): ExplainerLevel {
+	const value = text(meta, "level", slug);
+	if (value !== "beginner" && value !== "intermediate" && value !== "advanced") {
+		throw new ContentError(slug, `level must be "beginner", "intermediate" or "advanced", got "${value}"`);
+	}
+	return value;
+}
+
+function readingTime(body: string): number {
+	return Math.max(1, Math.round(body.split(/\s+/).filter(Boolean).length / 220));
 }
 
 function list(value: string | undefined): readonly string[] {

@@ -16,10 +16,11 @@ export const mind: BeyondChapter = {
 	slug: "mind",
 	name: "Mind",
 	tagline: "what I think, what I do",
-	summary: "The events I show up to, and what I think about AI and the world it is changing.",
+	summary: "The events I show up to, what I think about AI and the world it is changing, and ideas from my field made simple.",
 	sections: [
 		{ id: "activities", label: "Activities", note: "conferences, hackathons, volunteering" },
 		{ id: "reflections", label: "Reflections", note: "AI, society, and what comes next" },
+		{ id: "explainers", label: "Explainers", note: "ideas made simple, in writing then video" },
 	],
 };
 

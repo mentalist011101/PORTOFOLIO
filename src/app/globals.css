@@ -89,6 +89,30 @@
 	color-scheme: dark;
 }
 
+/* Tableau noir de la vulgarisation : ardoise bleu-gris, traces de brosse, texte à la craie.
+   Mêmes jetons redéfinis que pour .chess-room, indépendamment du thème du site. */
+.chalkboard {
+	--color-ink: #f4f2ea;
+	--color-ink-soft: rgba(244, 242, 234, 0.78);
+	--color-ink-faint: rgba(244, 242, 234, 0.52);
+	--color-rule: rgba(244, 242, 234, 0.16);
+	--color-rule-strong: rgba(244, 242, 234, 0.34);
+	--color-card: #24313a;
+	color-scheme: dark;
+	background-color: #1f2b33;
+	background-image:
+		radial-gradient(ellipse 60% 40% at 25% 20%, rgba(255, 255, 255, 0.07), transparent 70%),
+		radial-gradient(ellipse 50% 35% at 80% 85%, rgba(255, 255, 255, 0.05), transparent 70%),
+		repeating-linear-gradient(-12deg, rgba(255, 255, 255, 0.018) 0 2px, transparent 2px 9px);
+	color: var(--color-ink);
+}
+
+.chalk {
+	text-shadow:
+		0 0 1px rgba(244, 242, 234, 0.55),
+		0.5px 0.5px 0 rgba(244, 242, 234, 0.15);
+}
+
 @layer base {
 	html {
 		scroll-behavior: smooth;

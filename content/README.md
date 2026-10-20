@@ -39,6 +39,26 @@ Un paragraphe avec du *italique*, du **gras** et un [lien](https://exemple.org).
 - `lang` : `fr` ou `en`, la langue dans laquelle le texte est écrit.
 - `demo: true` : marque le texte comme placeholder. Supprimer la ligne pour un vrai texte.
 
+## Vulgarisation — `content/explainers/`
+
+```md
+---
+title: Qu'est-ce qu'un graphe de connaissances ?
+date: 2026-11-02
+lang: fr
+level: beginner
+summary: Une phrase d'accroche, affichée sur la leçon au tableau.
+tldr: L'idée en une phrase, mise en avant en haut de la page.
+video: dQw4w9WgXcQ
+---
+
+L'explication, en Markdown (mêmes possibilités que les réflexions).
+```
+
+- `level` : `beginner`, `intermediate` ou `advanced`.
+- `video` (facultatif) : l'identifiant YouTube, c'est-à-dire ce qui suit `v=` dans
+  l'adresse de la vidéo. Sans cette ligne, la page indique « video coming ».
+
 ## Poèmes — `content/poems/`
 
 ```md

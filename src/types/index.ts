@@ -184,6 +184,25 @@ export interface Reflection {
 	readonly html: string;
 }
 
+export type ExplainerLevel = "beginner" | "intermediate" | "advanced";
+
+export interface Explainer {
+	readonly slug: string;
+	readonly demo: boolean;
+	readonly title: string;
+	/** YYYY-MM-DD */
+	readonly date: string;
+	readonly lang: ContentLang;
+	readonly summary: string;
+	readonly level: ExplainerLevel;
+	/** L'idée en une phrase, mise en avant en tête de la page. */
+	readonly tldr: string;
+	/** Identifiant YouTube (la partie après `v=`), quand la vidéo existe. */
+	readonly video?: string;
+	readonly readingTime: number;
+	readonly html: string;
+}
+
 export interface Poem {
 	readonly slug: string;
 	readonly demo: boolean;
