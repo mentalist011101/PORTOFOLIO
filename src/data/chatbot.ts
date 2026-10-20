@@ -1,5 +1,6 @@
 import { articles } from "@/data/articles";
 import { badges } from "@/data/badges";
+import { chapters } from "@/data/beyond";
 import { education } from "@/data/education";
 import { experience } from "@/data/experience";
 import { profile } from "@/data/profile";
@@ -117,6 +118,20 @@ export const knowledgeBase: readonly KnowledgeEntry[] = [
 		link: { label: "See the credentials", href: "#credentials" },
 	},
 	{
+		id: "beyond",
+		topic: "Beyond the code",
+		keywords: [
+			"beyond", "hobby", "hobbies", "passion", "passions", "personal", "leisure", "fun", "chess", "poetry", "poem", "poems",
+			"essay", "essays", "opinion", "opinions", "explainer", "explainers", "inspiration", "inspirations", "robotics",
+			"design", "volunteering", "volunteer", "hackathon", "hackathons", "conference", "conferences", "outside", "spare", "clock",
+		],
+		answer: `Off the clock, the site has a second space, Beyond the code, written as a notebook in two chapters. ${chapters
+			.map((chapter) => `${chapter.name} — ${chapter.tagline}: ${chapter.sections.map((section) => section.label.toLowerCase()).join(", ")}`)
+			.join(". ")}. The chess ratings come live from chess.com, and the texts stay in the language they were written in, French or English.`,
+		followUps: ["What are his research interests?", "What has he built?", "How can I contact him?"],
+		link: { label: "Open Beyond the code", href: "/beyond" },
+	},
+	{
 		id: "github",
 		topic: "GitHub",
 		keywords: ["github", "code", "repository", "repositories", "repo", "source", "open"],
@@ -169,6 +184,7 @@ export const suggestedQuestions: readonly string[] = [
 	"What has he built?",
 	"What does he study?",
 	"How does this assistant work?",
+	"What are his hobbies?",
 ];
 
 export const fallbackAnswer =

@@ -65,6 +65,7 @@ const TOPICS = [
 	"Articles and technical notes",
 	"Experience, credentials and academic record",
 	"How to reach him, and where the code lives",
+	"Life beyond the code: essays, poetry, chess",
 ] as const;
 
 function truncate(value: string, maxLength: number): string {

@@ -24,8 +24,8 @@ export async function Chess() {
 						<p className="eyebrow">Over the board</p>
 						<h2 className="mt-2 text-[clamp(1.9rem,4.6vw,3.1rem)] leading-[1.05] text-ink">Chess</h2>
 						<p className="mt-5 text-[0.975rem] leading-relaxed text-ink-soft">
-							Mostly rapid, on chess.com. Everything here is live from its public API: the last game I played, and my
-							rating month by month — the months where it goes the wrong way included.
+							Blitz, rapid and the occasional bullet, on chess.com. Everything here is live from its public API: the
+							last game I played, and my rating month by month — the months where it goes the wrong way included.
 						</p>
 					</div>
 					<a
